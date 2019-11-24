@@ -1,4 +1,4 @@
-# Sistem elektronskog placanja
+# Sistemi elektronskog placanja
 
 **Uvod:**
 
