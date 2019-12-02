@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-@RequestMapping(value = "kp")
+@RequestMapping(value = "api1/kp")
 public class KoncentratorPlacanjaController {
 
     @Autowired
@@ -29,10 +29,11 @@ public class KoncentratorPlacanjaController {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-
+        System.out.println("USO OVDE");
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
         String retval = restTemplate.postForObject("http://localhost:8762/" + nacin+"/"
-                +"api1/bitcoin/pro",entity,String.class);
+                +"api1/bitcoin/startPayment",entity,String.class);
+
 
         return retval;
     }

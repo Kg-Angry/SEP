@@ -1,4 +1,4 @@
-package com.example.bitcoin.Bitcoin.Config;
+package com.example.paypal.PayPal.Config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
