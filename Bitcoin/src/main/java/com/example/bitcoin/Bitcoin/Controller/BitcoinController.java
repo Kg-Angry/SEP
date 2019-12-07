@@ -40,7 +40,7 @@ public class BitcoinController {
         mapa.put("title", platilac.getNaziv_casopisa());
         mapa.put("description", "Placanje naucnog casopisa");
         mapa.put("callback_url", "https://api-sandbox.coingate.com/account/orders");
-        mapa.put("success_url", "http://localhost:4200/uspesnoPlacanje");
+        mapa.put("success_url", "https://localhost:4200/uspesnoPlacanje");
         mapa.put("cancel_url", "http://localhost:4200/");
 
         RestTemplate client = new RestTemplate();
