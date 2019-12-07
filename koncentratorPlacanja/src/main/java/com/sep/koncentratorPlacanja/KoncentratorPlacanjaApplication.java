@@ -17,6 +17,7 @@ public class KoncentratorPlacanjaApplication {
 		SpringApplication.run(KoncentratorPlacanjaApplication.class, args);
 	}
 
+	@LoadBalanced
 	@Bean
 	public RestTemplate getRestTemplate() {
 		RestTemplate rt = new RestTemplate();

@@ -20,12 +20,12 @@ import java.util.UUID;
 @RequestMapping(value = "api1/bitcoin")
 public class BitcoinController {
 
-    @RequestMapping(value = "/proba", method = RequestMethod.GET)
-    public ResponseEntity<?> proba()
-    {
-        System.out.println("USAO");
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/proba", method = RequestMethod.GET)
+//    public ResponseEntity<?> proba()
+//    {
+//        System.out.println("USAO");
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     @RequestMapping(value = "/startPayment")
     //@Transactional(readOnly = false, rollbackFor = Exception.class, propagation = Propagation.REQUIRED, isolation = Isolation.SERIALIZABLE)
