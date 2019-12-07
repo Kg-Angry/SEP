@@ -31,7 +31,7 @@ public class KoncentratorPlacanjaController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         System.out.println("USO OVDE");
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
-        String retval = restTemplate.postForObject("http://localhost:8762/" + nacin+"/"
+        String retval = restTemplate.postForObject("https://localhost:8762/" + nacin+"/"
                 +"api1/bitcoin/startPayment",entity,String.class);
 
 
