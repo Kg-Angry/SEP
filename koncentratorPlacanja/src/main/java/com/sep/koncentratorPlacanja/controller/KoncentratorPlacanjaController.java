@@ -15,15 +15,15 @@ public class KoncentratorPlacanjaController {
 
 //    @GetMapping(value = "/{nacin}")
 //    public String proba(@PathVariable String nacin){
-//        String url= "http://localhost:8762/" + nacin+"/"
-//                +"api1/bitcoin/pro";
+//        String url= "http://"+ nacin+"/"
+//                +"api1/bitcoin/proba";
 //        System.out.println(url);
-//        String retval = restTemplate.getForObject("http://localhost:8762/" + nacin+"/"
-//                +"api1/bitcoin/pro",String.class);
+//        String retval = restTemplate.getForObject("http://"+ nacin+"/"
+//                +"api1/bitcoin/proba",String.class);
 //        return retval;
 //    }
 
-//    nacin = bitcoin-api,paypal-api
+    //nacin = bitcoin-api,paypal-api
     @PostMapping(value = "/{nacin}")
     public String payment(@RequestBody PlatilacDTO platilacDTO,@PathVariable String nacin){
 
@@ -31,9 +31,8 @@ public class KoncentratorPlacanjaController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         System.out.println("USO OVDE");
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
-        String retval = restTemplate.postForObject("https://localhost:8762/" + nacin+"/"
+        String retval = restTemplate.postForObject("http://"+nacin+"/"
                 +"api1/bitcoin/startPayment",entity,String.class);
-
 
         return retval;
     }
