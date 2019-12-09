@@ -38,9 +38,26 @@ public class KoncentratorPlacanjaController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         System.out.println("USO OVDE");
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
-        String retval = restTemplate.postForObject("https://"+nacin+"/"
-                +"api1/bitcoin/startPayment",entity,String.class);
-
+        String retval="";
+        if(nacin.equals("bitcoin-api"))
+        {
+            retval = restTemplate.postForObject("https://"+nacin+"/"
+                    +"api1/bitcoin/startPayment",entity,String.class);
+            return retval;
+        }else if(nacin.equals("paypal-api"))
+        {
+            if(platilacDTO.getPayerID()==null && platilacDTO.getPaymentId()==null)
+            {
+                retval = restTemplate.postForObject("https://"+nacin+"/"
+                    +"api3/paypal/startPayment/"+platilacDTO.getCena(),entity,String.class);
+                return retval;
+            }else
+            {
+                retval = restTemplate.postForObject("https://"+nacin+"/"
+                        +"api3/paypal/completePayment/",entity,String.class);
+                return retval;
+            }
+        }
         return retval;
     }
 }

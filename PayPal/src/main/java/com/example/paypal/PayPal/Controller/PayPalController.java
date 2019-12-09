@@ -22,10 +22,10 @@ public class PayPalController {
     private static String clientId = "Ae_29b_0t76NauXNqN2GpLBl7CAR82-AoEOGpn4OpY29CBNLDVdD4QwKdheDsBHafoQvs_HLnCRGYSbm";
     private static String clientSecret = "EBtg38K9znkZNdNgrib5mZDdifDYzMqVYHLybGuaftjFd8Q76ag5tjZuxytET2DczXDXxWBP-vp2c97K";
 
-    @RequestMapping(method = RequestMethod.POST, value="/startPayment")
-    public String paypal()
+    @RequestMapping(method = RequestMethod.POST, value="/startPayment/{cena}")
+    public String paypal(@PathVariable String cena)
     {
-        return createPayment("12");
+        return createPayment(cena);
     }
 
     @PostMapping(value = "/completePayment")
@@ -57,7 +57,7 @@ public class PayPalController {
 
         RedirectUrls redirectUrls = new RedirectUrls();
         redirectUrls.setCancelUrl("https://localhost:4200/cancel");
-        redirectUrls.setReturnUrl("http://localhost:4200/paypal");
+        redirectUrls.setReturnUrl("https://localhost:4200/paypal");
         payment.setRedirectUrls(redirectUrls);
         Payment createdPayment;
         try {
@@ -101,7 +101,7 @@ public class PayPalController {
                 response.put("payment", createdPayment);
                 return true;
             }
-            //System.out.println("RESPONSE: " + response);
+            System.out.println("RESPONSE: " + response);
             return false;
         } catch (PayPalRESTException e) {
             System.err.println(e.getDetails());

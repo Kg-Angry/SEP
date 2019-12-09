@@ -21,10 +21,14 @@ public class PlatilacDTO {
 
     private String naziv_casopisa;
 
+    private String paymentId;
+
+    private String payerID;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa,String paymentId,String payerID) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -34,6 +38,8 @@ public class PlatilacDTO {
         this.neuspesnaRedirekcija = neuspesnaRedirekcija;
         this.pogresnaRedirekcija = pogresnaRedirekcija;
         this.naziv_casopisa = naziv_casopisa;
+        this.paymentId = paymentId;
+        this.payerID = payerID;
     }
 
     public Double getCena() {
@@ -106,5 +112,21 @@ public class PlatilacDTO {
 
     public void setNaziv_casopisa(String naziv_casopisa) {
         this.naziv_casopisa = naziv_casopisa;
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public String getPayerID() {
+        return payerID;
+    }
+
+    public void setPayerID(String payerID) {
+        this.payerID = payerID;
     }
 }
