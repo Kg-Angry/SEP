@@ -16,7 +16,6 @@ import org.springframework.web.client.RestTemplate;
 public class KoncentratorPlacanjaApplication {
 
 	static {
-
 		// Kopirati sertifikate u C
 		// Nalaze se target/class
 		System.setProperty("jdk.tls.client.protocols", "TLSv1.2");
@@ -41,8 +40,6 @@ public class KoncentratorPlacanjaApplication {
 	@LoadBalanced
 	@Bean
 	public RestTemplate getRestTemplate() {
-//		RestTemplate rt = new RestTemplate();
-//		rt.setRequestFactory( new HttpComponentsClientHttpRequestFactory() );
 		return new RestTemplate();
 	}
 }

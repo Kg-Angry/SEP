@@ -1,11 +1,10 @@
 package com.example.bitcoin.Bitcoin.Controller;
 
 import com.example.bitcoin.Bitcoin.DTO.PlatilacDTO;
+import com.example.bitcoin.Bitcoin.DTO.TransakcijeDTO;
 import com.example.bitcoin.Bitcoin.Model.ResponseBitcoin;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,28 +19,23 @@ import java.util.UUID;
 @RequestMapping(value = "api1/bitcoin")
 public class BitcoinController {
 
-//    @RequestMapping(value = "/proba", method = RequestMethod.GET)
-//    public ResponseEntity<?> proba()
-//    {
-//        System.out.println("USAO");
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
+    @Autowired
+    RestTemplate restTemplate;
 
     @RequestMapping(value = "/startPayment")
-    //@Transactional(readOnly = false, rollbackFor = Exception.class, propagation = Propagation.REQUIRED, isolation = Isolation.SERIALIZABLE)
     public String startPayment(@RequestBody PlatilacDTO platilac){
 
-
         Map<String, Object> mapa = new HashMap<String,Object>();
-        mapa.put("order_id", UUID.randomUUID().toString());
+        String order_id = UUID.randomUUID().toString();
+        mapa.put("order_id", order_id);
         mapa.put("price_amount", platilac.getCena());
         mapa.put("price_currency","USD");
         mapa.put("receive_currency","USD");
         mapa.put("title", platilac.getNaziv_casopisa());
         mapa.put("description", "Placanje naucnog casopisa");
         mapa.put("callback_url", "https://api-sandbox.coingate.com/account/orders");
-        mapa.put("success_url", "https://localhost:4200/uspesnoPlacanje");
-        mapa.put("cancel_url", "https://localhost:4200/neuspesnoPlacanje");
+        mapa.put("success_url", "https://localhost:4200/uspesnoPlacanje/"+order_id);
+        mapa.put("cancel_url", "https://localhost:4200/neuspesnoPlacanje/"+order_id);
 
         RestTemplate client = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -61,16 +55,23 @@ public class BitcoinController {
         noviHeaders.add("status", response.getStatus()); //ovde ce uvek biti new
         noviHeaders.add("merchant_order_id", platilac.getKorisnicko_ime_platioca()); //uplatilac
         //System.out.println("\t\tnoviHeaders: " + noviHeaders.toString() + "\n\n");
-
+        TransakcijeDTO trDTO = new TransakcijeDTO();
+        trDTO.setIdTransakcije(response.getId().toString());
+        trDTO.setOrderId(order_id);
+        trDTO.setCena(platilac.getCena());
+        trDTO.setUuid(response.getPayment_url().split("invoice/")[1]);
+        trDTO.setNaziv(platilac.getNaziv_casopisa());
+        trDTO.setVremeKreiranjaTransakcije(response.getCreated_at());
+        trDTO.setStatus(response.getStatus());
+        trDTO.setUplatilac(platilac.getKorisnicko_ime_platioca());
         String paymentUrl = response.getPayment_url();
-        String idIniciraneTransakcije = response.getId().toString();
-        String uuid = response.getPayment_url().split("invoice/")[1];
-        String naziv = platilac.getNaziv_casopisa();
-        String vremeKreiranja = response.getCreated_at();
-        String status = response.getStatus();
-        String uplatilac = platilac.getKorisnicko_ime_platioca();
-        String retVal = paymentUrl + ", " + idIniciraneTransakcije + ", " + uuid + ", " + naziv + ", " + vremeKreiranja + ", " + status + ", " + uplatilac;
-        //System.out.println("RETVAL" + paymentUrl);
+        HttpHeaders h = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(trDTO,h);
+        restTemplate.postForObject("https://koncentrator-placanja/api1/kp/kreiranaTransakcija",transakcija,String.class);
+
+        //String retVal = paymentUrl + ", " + idIniciraneTransakcije + ", " + uuid + ", " + naziv + ", " + vremeKreiranja + ", " + status + ", " + uplatilac;
+        //System.out.println("RETVAL" + retVal);
         return paymentUrl;
     }
 }
