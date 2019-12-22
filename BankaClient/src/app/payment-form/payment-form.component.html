@@ -1,0 +1,26 @@
+<div>
+<form class="payment">
+
+  <div class="panel panel-default credit-card-box">
+    <div class="panel-heading display-table">
+      <div class="row display-tr">
+        <h3 class="panel-title display-td">Payment Details</h3>
+        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+      </div>
+    </div>
+  </div>
+  <br>
+  <label for="pan">PAN</label>
+  <input type="text" size="10" class="form-control" [(ngModel)]="card.pan" name="pan" placeholder="PAN"  required autofocus />
+  <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+  <label for="cardExpire">EXPIRATION DATE</label>
+  <input type="text" size="5" class="form-control" [(ngModel)]="card.datumVazenja" name="cardExpiry" placeholder="MM / YY"  required />
+  <label for="securityCode">SECURITY CODE</label>
+  <input type="text" size="3" class="form-control" name="securityCode" [(ngModel)]="card.securityCode" placeholder="Security code" required />
+  <label for="cardHolderName">CARD HOLDER NAME</label>
+  <input type="text" class="form-control" name="cardHolderName" [(ngModel)]="card.cardHolderName" placeholder="Card holder name" required=""/>
+  <br>
+  <button class="blueButton" style="float:right;" type="submit" (click)="sendCard(card)">Confirm Payment</button>
+  <br><br>
+</form>
+</div>

@@ -60,6 +60,11 @@ public class KoncentratorPlacanjaController {
                 logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za zavrsetak placanja.\n");
                 return retval;
             }
+        }else if(nacin.equals("banka-api")){
+            retval = restTemplate.postForObject("https://"+nacin+"/"
+                    +"startPayment",entity,String.class);
+            logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");
+            return retval;
         }
         logger.info("\n\t\tRedirekcija nije uspela.\n");
         return retval;
