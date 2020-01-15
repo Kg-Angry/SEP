@@ -1,6 +1,8 @@
 package com.sep.koncentratorPlacanja.dto;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PlatilacDTO {
     private Double cena;
@@ -25,10 +27,16 @@ public class PlatilacDTO {
 
     private String payerID;
 
+    private String token;
+
+    private String period;
+
+    private String rate;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa,String paymentId,String payerID) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa,String paymentId,String payerID, String token, String period, String rate) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -40,6 +48,9 @@ public class PlatilacDTO {
         this.naziv_casopisa = naziv_casopisa;
         this.paymentId = paymentId;
         this.payerID = payerID;
+        this.token = token;
+        this.period = period;
+        this.rate = rate;
     }
 
     public Double getCena() {
@@ -128,5 +139,29 @@ public class PlatilacDTO {
 
     public void setPayerID(String payerID) {
         this.payerID = payerID;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 }

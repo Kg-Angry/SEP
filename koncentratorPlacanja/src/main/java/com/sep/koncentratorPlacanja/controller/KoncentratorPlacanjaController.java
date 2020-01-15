@@ -30,6 +30,31 @@ public class KoncentratorPlacanjaController {
 
     private static final Logger logger = LoggerFactory.getLogger(KoncentratorPlacanjaController.class);
 
+    @PostMapping(value="/pretplata")
+    public String pretplata(@RequestBody PlatilacDTO platilacDTO)
+    {
+        String retval="";
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
+        System.out.println("USAO U METODU  " + platilacDTO.getToken());
+        if(platilacDTO.getToken() == null)
+        {
+            retval = restTemplate.postForObject("https://paypal-api/"
+                    +"api3/paypal/pretplataPayPal",entity,String.class);
+
+            return retval;
+        }else
+        {
+            retval = restTemplate.postForObject("https://paypal-api/"
+                    +"api3/paypal/izvrsiPretplatu",entity,String.class);
+
+            System.out.println("Vratio mi je: " + retval);
+            return retval;
+        }
+
+    }
+
     //nacin = bitcoin-api,paypal-api
     @PostMapping(value = "/{nacin}")
     public String payment(@RequestBody PlatilacDTO platilacDTO,@PathVariable String nacin){
@@ -53,10 +78,9 @@ public class KoncentratorPlacanjaController {
                     +"api3/paypal/startPayment",entity,String.class);
                 logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");
                 return retval;
-            }else
-            {
-                retval = restTemplate.postForObject("https://"+nacin+"/"
-                        +"api3/paypal/completePayment/",entity,String.class);
+            }else {
+                retval = restTemplate.postForObject("https://" + nacin + "/"
+                        + "api3/paypal/completePayment/", entity, String.class);
                 logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za zavrsetak placanja.\n");
                 return retval;
             }
@@ -99,20 +123,22 @@ public class KoncentratorPlacanjaController {
     @PostMapping(value = "/izmenjenStatusTransakcije")
     private ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
     {
+
         Transakcije t = ts.findByOrderId(transakcije.getOrderId());
         if(t!=null)
         {
-            //System.out.println("STATUS: "+transakcije.getStatus());
             if(transakcije.getStatus().equals("uspesno")) {
                 t.setStatus(transakcije.getStatus());
+                String tipPlacanja = t.getTipPlacanja();
                 ts.save(t);
-                logger.info("\n\t\tUspesno je placeno preko Bitcoin-a.");
+                logger.info("\n\t\tUspesno je placeno preko "+tipPlacanja+"-a .");
                 return new ResponseEntity(HttpStatus.OK);
             }else if(transakcije.getStatus().equals("neuspesno"))
             {
                 t.setStatus(transakcije.getStatus());
+                String tipPlacanja = t.getTipPlacanja();
                 ts.save(t);
-                logger.info("\n\t\tNeuspesno placanje preko Bitcoint-a.");
+                logger.info("\n\t\tNeuspesno placanje preko "+tipPlacanja+"-a .");
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
             }
         }

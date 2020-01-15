@@ -28,10 +28,16 @@ public class PlatilacDTO {
 
     private String client_secret;
 
+    private String token;
+
+    private String period;
+
+    private String rate;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret,String token, String period, String rate) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -43,11 +49,14 @@ public class PlatilacDTO {
         this.naziv_casopisa = naziv_casopisa;
         this.client_id = client_id;
         this.client_secret = client_secret;
+        this.token = token;
+        this.period = period;
+        this.rate = rate;
     }
 
     public PlatilacDTO (Platilac p)
     {
-        this(p.getCena(),p.getKorisnicko_ime_platioca(),p.getLozinka_platioca(),p.getId_porudzbine(),p.getVremensko_ogranicenje(),p.getUspesnaRedirekcija(),p.getNeuspesnaRedirekcija(),p.getPogresnaRedirekcija(),p.getNaziv_casopisa(),"","");
+        this(p.getCena(),p.getKorisnicko_ime_platioca(),p.getLozinka_platioca(),p.getId_porudzbine(),p.getVremensko_ogranicenje(),p.getUspesnaRedirekcija(),p.getNeuspesnaRedirekcija(),p.getPogresnaRedirekcija(),p.getNaziv_casopisa(),"","",p.getToken(),p.getPeriod(),p.getRate());
     }
 
     public Double getCena() {
@@ -136,5 +145,29 @@ public class PlatilacDTO {
 
     public void setClient_secret(String client_secret) {
         this.client_secret = client_secret;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(String period) {
+        this.period = period;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 }
