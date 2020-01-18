@@ -207,11 +207,8 @@ public class KoncentratorPlacanjaController {
     @GetMapping(value="/transakcije/{order_id}")
     public boolean transakcijeNeuspesna(@PathVariable String order_id)
     {
-        System.out.println("ORDER ID: " + order_id);
         Transakcije t = ts.findByOrderId(order_id);
-        System.out.println("Status koji je vratio "+t.getStatus());
         if(t.getStatus().equals("neuspesno")) {
-            System.out.println("POSTOJIIII!!!!!!!!!!!!!");
             return true;
         }
         return false;
