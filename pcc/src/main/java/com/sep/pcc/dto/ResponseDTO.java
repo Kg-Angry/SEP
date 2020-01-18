@@ -1,4 +1,4 @@
-package com.sep.banka.dto;
+package com.sep.pcc.dto;
 
 import java.sql.Timestamp;
 
@@ -6,7 +6,7 @@ public class ResponseDTO {
 
     private String statusTransakcije;
     private String MerchantUsername;
-    private int AcquirerId;
+    private Long AcquirerId;
     private Timestamp acquirerTimestamp;
     private Long PaymentId;
 
@@ -29,11 +29,11 @@ public class ResponseDTO {
         MerchantUsername = merchantUsername;
     }
 
-    public int getAcquirerId() {
+    public Long getAcquirerId() {
         return AcquirerId;
     }
 
-    public void setAcquirerId(int acquirerId) {
+    public void setAcquirerId(Long acquirerId) {
         AcquirerId = acquirerId;
     }
 

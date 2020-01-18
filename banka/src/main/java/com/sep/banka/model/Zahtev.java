@@ -14,7 +14,7 @@ public class Zahtev {
     private Long idZahtev;
 
     private Long paymentId;
-    private String mercantUsername;//id prodavca
+    private String merchantUsername;//id prodavca
     private String merchantPassword;
     private BigDecimal amount; //iznos transakcije
     private Integer merchantOrderId; //prodavcev id transkcije
@@ -42,12 +42,12 @@ public class Zahtev {
         this.paymentId = paymentId;
     }
 
-    public String getMercantUsername() {
-        return mercantUsername;
+    public String getMerchantUsername() {
+        return merchantUsername;
     }
 
-    public void setMercantUsername(String mercantUsername) {
-        this.mercantUsername = mercantUsername;
+    public void setMerchantUsername(String merchantUsername) {
+        this.merchantUsername = merchantUsername;
     }
 
     public String getMerchantPassword() {

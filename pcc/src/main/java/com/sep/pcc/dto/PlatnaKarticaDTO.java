@@ -1,4 +1,4 @@
-package com.sep.banka.dto;
+package com.sep.pcc.dto;
 
 import java.sql.Timestamp;
 
@@ -20,7 +20,7 @@ public class PlatnaKarticaDTO {
 
     private Timestamp acquirerTimestamp;
 
-    private int issuerId;
+    private Long issuerId;
 
     private Timestamp issuerTimestamp;
 
@@ -94,11 +94,11 @@ public class PlatnaKarticaDTO {
         this.acquirerTimestamp = acquirerTimestamp;
     }
 
-    public int getIssuerId() {
+    public Long getIssuerId() {
         return issuerId;
     }
 
-    public void setIssuerId(int issuerId) {
+    public void setIssuerId(Long issuerId) {
         this.issuerId = issuerId;
     }
 

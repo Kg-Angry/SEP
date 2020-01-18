@@ -10,12 +10,16 @@ import com.sep.banka.service.PaymentService;
 import com.sep.banka.service.PlatnaKarticaService;
 import com.sep.banka.service.ZahtevService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 @CrossOrigin
 @RestController
@@ -27,6 +31,8 @@ public class BankaController {
     PaymentService paymentService;
     @Autowired
     ZahtevService zahtevService;
+    @Autowired
+    RestTemplate restTemplate;
 
     @PostMapping(value = "/startPayment")
     public String startPayment(@RequestBody PlatilacDTO platilacDTO){
@@ -48,16 +54,20 @@ public class BankaController {
     @PostMapping(value = "/checkPan")
     public ResponseEntity<?> checkPan(@RequestBody PlatnaKarticaDTO platnaKarticaDTO){
         PlatnaKartica karticaCasopisa = platnaKarticaService.getProdavacKartica(platnaKarticaDTO);
-
+        System.out.println("asdsadasd");
         if(platnaKarticaDTO.getPan().substring(0,5).equals(karticaCasopisa.getPan().substring(0,5))){
             //Ista je banka
             ResponseDTO responseDTO = pay(platnaKarticaDTO);
             return new ResponseEntity<>(responseDTO, HttpStatus.OK);
         }else{
-            System.out.println("Preumeriti na pcc");
+            platnaKarticaDTO.setAcquierID((int)(Math.random()*100000));
+            platnaKarticaDTO.setAcquirerTimestamp(new Timestamp(System.currentTimeMillis()));
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<PlatnaKarticaDTO> entity = new HttpEntity<>(platnaKarticaDTO,headers);
+            ResponseDTO responseDTO = restTemplate.postForObject("https://PCC-API/drugaBanka",entity,ResponseDTO.class);
+            return new ResponseEntity<>(responseDTO,HttpStatus.OK);
         }
-
-        return null;
     }
 
     @PostMapping(value = "/pay")
@@ -83,6 +93,21 @@ public class BankaController {
         }
         //LOGER TRANSAKCIJA USPESNA
         return paymentService.getResponse(platnaKarticaDTO,"https://localhost:4201/neuspesno");
+    }
+
+    @PostMapping(value = "/checkCard")
+    public PlatnaKarticaDTO checkCard(@RequestBody PlatnaKarticaDTO platnaKarticaDTO){
+        if(platnaKarticaService.proveraAutenticnsotiKupca(platnaKarticaDTO)){
+            PlatnaKartica kartica = platnaKarticaService.getKupacKartica(platnaKarticaDTO);
+            if(zahtevService.getByPaymentId(platnaKarticaDTO.getPaymentId())!=null){
+                if(kartica.getAmount().compareTo(zahtevService.getByPaymentId(platnaKarticaDTO.getPaymentId()).getAmount())>0){
+                    platnaKarticaDTO.setIssuerId((int)(Math.random()*100000));
+                    platnaKarticaDTO.setIssuerTimestamp(new Timestamp(System.currentTimeMillis()));
+                    return platnaKarticaDTO;
+                }
+            }
+        }
+        return null;
     }
 
 }

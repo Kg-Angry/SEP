@@ -4,23 +4,22 @@ import {timer} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-uspesno',
-  templateUrl: './uspesno.component.html',
-  styleUrls: ['./uspesno.component.css']
+  selector: 'app-greska',
+  templateUrl: './greska.component.html',
+  styleUrls: ['./greska.component.css']
 })
-export class UspesnoComponent implements OnInit {
+export class GreskaComponent implements OnInit {
 
   constructor(private route: Router) { }
 
   ngOnInit() {
     Swal.fire({
       position: 'top-end',
-      icon: 'success',
-      title: 'Uspesno ste platili casopis',
+      icon: 'error',
+      title: 'Greska prilikom placanja casopisa',
       showConfirmButton: false,
       timer: 4500
     });
-    timer(5500).subscribe(t => location.href = 'https://localhost:4200/');
-  }
+    timer(5500).subscribe(t => location.href = 'https://localhost:4200/');  }
 
 }

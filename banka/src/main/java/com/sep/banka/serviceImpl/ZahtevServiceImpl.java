@@ -30,7 +30,7 @@ public class ZahtevServiceImpl implements ZahtevService {
         zahtev.setAmount(zahtevDTO.getAmount());
         zahtev.setErrorUrl(zahtevDTO.getErrorUrl());
         zahtev.setFailedUrl(zahtevDTO.getFailedUrl());
-        zahtev.setMercantUsername(zahtevDTO.getMerchantUsername());
+        zahtev.setMerchantUsername(zahtevDTO.getMerchantUsername());
         zahtev.setMerchantPassword(zahtevDTO.getMerchantPassword());
         zahtev.setSuccessUrl(zahtevDTO.getSuccessUrl());
         return zahtevRepository.save(zahtev);
@@ -46,7 +46,7 @@ public class ZahtevServiceImpl implements ZahtevService {
         Zahtev zahtev = new Zahtev();
         zahtev.setPaymentId(paymentId);
         //OVDE TREBA ID MERCHANTA!!
-        zahtev.setMercantUsername(platilacDTO.getNaziv_casopisa());
+        zahtev.setMerchantUsername(platilacDTO.getNaziv_casopisa());
         zahtev.setSuccessUrl(platilacDTO.getUspesnaRedirekcija());
         zahtev.setMerchantPassword(platilacDTO.getLozinka_platioca());
         zahtev.setFailedUrl(platilacDTO.getNeuspesnaRedirekcija());

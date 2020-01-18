@@ -21,7 +21,7 @@ export class PaymentFormComponent implements OnInit {
     console.log(this.card);
     this.payService.sendCard(card).subscribe(
       data => {
-        alert('Casopis uspesno placen');
+        location.href = data.statusTransakcije;
       } , error => {
         alert(error.error.message);
     }

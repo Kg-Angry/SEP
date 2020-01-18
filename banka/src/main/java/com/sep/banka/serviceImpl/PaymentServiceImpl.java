@@ -31,7 +31,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public ResponseDTO getResponse(PlatnaKarticaDTO platnaKarticaDTO, String url) {
         ResponseDTO responseDTO = new ResponseDTO();
-        responseDTO.setAcquirerId(platnaKarticaDTO.getAcquieID());
+        responseDTO.setAcquirerId(platnaKarticaDTO.getAcquierID());
         responseDTO.setAcquirerTimestamp(platnaKarticaDTO.getAcquirerTimestamp());
         responseDTO.setMerchantUsername(platnaKarticaDTO.getMerchantUsername());
         responseDTO.setPaymentId(platnaKarticaDTO.getPaymentId());

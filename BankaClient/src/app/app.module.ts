@@ -8,13 +8,15 @@ import { UspesnoComponent } from './uspesno/uspesno.component';
 import { NeuspesnoComponent } from './neuspesno/neuspesno.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { GreskaComponent } from './greska/greska.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaymentFormComponent,
     UspesnoComponent,
-    NeuspesnoComponent
+    NeuspesnoComponent,
+    GreskaComponent
   ],
   imports: [
     BrowserModule,
