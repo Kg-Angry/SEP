@@ -35,13 +35,13 @@ public class PayPalController {
         return createPayment(platilac);
     }
 
-    @PostMapping(value = "/completePayment")
-    public ResponseEntity uspesnoPlaceno(@RequestBody PayPalProfileDTO payPalProfileDTO){
+    @PostMapping(value = "/completePayment/{orderId}")
+    public String uspesnoPlaceno(@RequestBody PayPalProfileDTO payPalProfileDTO, @PathVariable String orderId){
 
-        if(completePayment(payPalProfileDTO))
-            return new ResponseEntity(HttpStatus.OK);
+        if(completePayment(payPalProfileDTO,orderId))
+            return "uspesno";
         else
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+            return "neuspesno";
     }
     //metoda za pocetak placanja PAYPAL-a
     public String createPayment(PlatilacDTO platilac){
@@ -107,12 +107,16 @@ public class PayPalController {
     }
 
     //potvrda klijenta o izvrsenom placanju
-    public boolean completePayment(PayPalProfileDTO payPalProfileDTO){
+    public boolean completePayment(PayPalProfileDTO payPalProfileDTO, String orderId){
         Map<String, Object> response = new HashMap();
         Payment payment = new Payment();
         payment.setId(payPalProfileDTO.getPaymentId());
         PaymentExecution paymentExecution = new PaymentExecution();
         paymentExecution.setPayerId(payPalProfileDTO.getPayerID());
+        System.out.println("Transakcija Oreder: " + orderId);
+        boolean statusTransakcije = restTemplate.getForObject("https://koncentrator-placanja/api1/kp/transakcije/"+orderId,Boolean.class);
+        if(statusTransakcije)
+            return false;
         try {
             APIContext context = new APIContext(clientId, clientSecret, "sandbox");
             Payment createdPayment = payment.execute(context, paymentExecution);
@@ -120,6 +124,7 @@ public class PayPalController {
                 response.put("status", "success");
                 response.put("payment", createdPayment);
                 //System.out.println("RESPONSE COMPLETE: " + response);
+//                restTemplate.getForObject("https://koncentrator-placanja/api1/kp/transakcije/"+orderId,);
                 return true;
             }
 

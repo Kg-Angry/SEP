@@ -11,12 +11,20 @@ import com.sep.koncentratorPlacanja.service.TransakcijeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.*;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequestMapping(value = "api1/kp")
@@ -28,6 +36,7 @@ public class KoncentratorPlacanjaController {
     @Autowired
     private TransakcijeService ts;
 
+
     private static final Logger logger = LoggerFactory.getLogger(KoncentratorPlacanjaController.class);
 
     @PostMapping(value="/pretplata")
@@ -37,7 +46,7 @@ public class KoncentratorPlacanjaController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
-        System.out.println("USAO U METODU  " + platilacDTO.getToken());
+//        System.out.println("USAO U METODU  " + platilacDTO.getToken());
         if(platilacDTO.getToken() == null)
         {
             retval = restTemplate.postForObject("https://paypal-api/"
@@ -63,6 +72,7 @@ public class KoncentratorPlacanjaController {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PlatilacDTO> entity = new HttpEntity<>(platilacDTO,headers);
         Transakcije t = new Transakcije();
+        System.out.println("Order ID: "+platilacDTO.getOrderId());
         String retval="";
         if(nacin.equals("bitcoin-api"))
         {
@@ -80,7 +90,7 @@ public class KoncentratorPlacanjaController {
                 return retval;
             }else {
                 retval = restTemplate.postForObject("https://" + nacin + "/"
-                        + "api3/paypal/completePayment/", entity, String.class);
+                        + "api3/paypal/completePayment/"+platilacDTO.getOrderId(), entity, String.class);
                 logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za zavrsetak placanja.\n");
                 return retval;
             }
@@ -169,5 +179,41 @@ public class KoncentratorPlacanjaController {
         }
         logger.info("\n\t\tTransakcija nije uspesno sacuvana.\n");
         return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+
+    @Scheduled(fixedRate = 30000)
+    public void checkStatus() throws ParseException {
+        List<Transakcije> lista_transakcija = ts.findByTransakcije("kreirana");
+
+        Date today = Calendar.getInstance().getTime();
+        long minuts=0;
+
+        for(Transakcije t : lista_transakcija)
+        {
+            SimpleDateFormat s = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+            Date d = s.parse(t.getVremeKreiranjaTransakcije());
+            if (d.before(today)){
+                minuts= ((today.getTime() - d.getTime())/ (1000*60)%60);
+            }
+            if(minuts == 3)
+            {
+             t.setStatus("neuspesno");
+             ts.save(t);
+            }
+        }
+        logger.info("\n\t\tProvera statusa transakcije.\n");
+    }
+
+    @GetMapping(value="/transakcije/{order_id}")
+    public boolean transakcijeNeuspesna(@PathVariable String order_id)
+    {
+        System.out.println("ORDER ID: " + order_id);
+        Transakcije t = ts.findByOrderId(order_id);
+        System.out.println("Status koji je vratio "+t.getStatus());
+        if(t.getStatus().equals("neuspesno")) {
+            System.out.println("POSTOJIIII!!!!!!!!!!!!!");
+            return true;
+        }
+        return false;
     }
 }

@@ -5,6 +5,8 @@ import com.sep.koncentratorPlacanja.repository.TransakcijeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TransakcijeService {
 
@@ -24,5 +26,10 @@ public class TransakcijeService {
     public Transakcije findByOrderId(String order_id)
     {
         return tr.findByOrderId(order_id);
+    }
+
+    public List<Transakcije> findByTransakcije(String status)
+    {
+        return tr.findAllByStatus(status);
     }
 }

@@ -1,8 +1,6 @@
 package com.sep.koncentratorPlacanja.dto;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 public class PlatilacDTO {
     private Double cena;
@@ -33,10 +31,12 @@ public class PlatilacDTO {
 
     private String rate;
 
+    private String orderId;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa,String paymentId,String payerID, String token, String period, String rate) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa,String paymentId,String payerID, String token, String period, String rate, String order_id) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -51,6 +51,7 @@ public class PlatilacDTO {
         this.token = token;
         this.period = period;
         this.rate = rate;
+        this.orderId = order_id;
     }
 
     public Double getCena() {
@@ -163,5 +164,13 @@ public class PlatilacDTO {
 
     public void setRate(String rate) {
         this.rate = rate;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 }
