@@ -1,0 +1,894 @@
+2020-01-19 17:49:29.385  INFO 3484 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : No active profile set, falling back to default profiles: default
+2020-01-19 17:49:33.307  INFO 3484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-19 17:49:33.526  INFO 3484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186ms. Found 3 repository interfaces.
+2020-01-19 17:49:34.401  INFO 3484 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d4ff2a9-d64c-39c5-852f-d3919c7f24dc
+2020-01-19 17:49:34.713  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$99ec37c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:34.838  INFO 3484 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-01-19 17:49:34.885  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.088  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.104  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.104  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@603adc5c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.119  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.135  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.135  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.135  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:35.182  INFO 3484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$116e75c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:49:36.604  INFO 3484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (https)
+2020-01-19 17:49:36.619  INFO 3484 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:49:36.619  INFO 3484 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:49:36.854  INFO 3484 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:49:36.854  INFO 3484 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7422 ms
+2020-01-19 17:49:37.650  INFO 3484 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-01-19 17:49:37.807  INFO 3484 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-01-19 17:49:38.103  INFO 3484 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-01-19 17:49:38.307  INFO 3484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 17:49:38.557  INFO 3484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 17:49:38.572  INFO 3484 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-19 17:49:40.353  INFO 3484 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-01-19 17:49:40.369  INFO 3484 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-19 17:49:40.572  INFO 3484 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-19 17:49:40.869  WARN 3484 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-19 17:49:43.712  INFO 3484 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 67e0be80-3d7b-4b9a-a325-9a33fe41ac69
+
+2020-01-19 17:49:44.087  INFO 3484 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5582142b, org.springframework.security.web.context.SecurityContextPersistenceFilter@2404502, org.springframework.security.web.header.HeaderWriterFilter@494301ef, org.springframework.security.web.authentication.logout.LogoutFilter@786c0399, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@490ec470, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39caac57, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@92393da, org.springframework.security.web.session.SessionManagementFilter@2ed579d0, org.springframework.security.web.access.ExceptionTranslationFilter@2ff56bda]
+2020-01-19 17:49:44.226  WARN 3484 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 17:49:44.227  INFO 3484 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 17:49:44.230  WARN 3484 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 17:49:44.230  INFO 3484 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 17:49:44.746  INFO 3484 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-19 17:49:45.922  INFO 3484 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-01-19 17:49:48.167  WARN 3484 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-01-19 17:49:48.628  INFO 3484 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-19 17:49:48.706  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-19 17:49:49.846  INFO 3484 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-19 17:49:49.846  INFO 3484 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-19 17:49:50.049  INFO 3484 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-19 17:49:50.049  INFO 3484 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-19 17:49:50.393  INFO 3484 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-19 17:49:50.780  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 17:49:50.968  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 17:49:50.968  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-19 17:49:50.968  INFO 3484 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-19 17:49:50.983  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579452590983 with initial instances count: 0
+2020-01-19 17:49:50.999  INFO 3484 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KONCENTRATOR-PLACANJA with eureka with status UP
+2020-01-19 17:49:51.015  INFO 3484 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579452591015, current=UP, previous=STARTING]
+2020-01-19 17:49:51.015  INFO 3484 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081: registering service...
+2020-01-19 17:49:51.147  INFO 3484 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081 - registration status: 204
+2020-01-19 17:49:51.350  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:49:52.560  INFO 3484 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (https) with context path ''
+2020-01-19 17:49:52.560  INFO 3484 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2020-01-19 17:49:53.279  INFO 3484 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : Started KoncentratorPlacanjaApplication in 34.388 seconds (JVM running for 39.689)
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2020-01-19 17:50:20.984  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 17:50:21.046  INFO 3484 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 17:50:21.062  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:50:33.597  INFO 3484 --- [https-jsse-nio-8081-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 17:50:33.598  INFO 3484 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-19 17:50:33.694  INFO 3484 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 96 ms
+2020-01-19 17:50:51.055  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:51:21.063  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:51:51.056  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:52:21.064  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:52:51.066  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:53:21.065  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:53:51.063  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:54:21.058  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:54:50.791  INFO 3484 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 17:54:51.056  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:55:21.055  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:55:51.058  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:55:53.630  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 17:55:53.661  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-banka-api
+2020-01-19 17:55:53.661  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.netflix.loadbalancer.BaseLoadBalancer  : Client: banka-api instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-01-19 17:55:53.677  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-01-19 17:55:53.692  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 17:55:53.708  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client banka-api initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[192.168.0.33:8088],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.33:8088;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@5a660ce3
+2020-01-19 17:55:54.692  INFO 3484 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 17:55:55.177  INFO 3484 --- [https-jsse-nio-8081-exec-7] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 17:55:55.208  INFO 3484 --- [https-jsse-nio-8081-exec-2] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1 , za podatke o placanju
+
+2020-01-19 17:56:21.079  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:56:51.063  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:57:21.064  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:57:51.070  INFO 3484 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:58:26.322  INFO 12316 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : No active profile set, falling back to default profiles: default
+2020-01-19 17:58:27.181  INFO 12316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-19 17:58:27.259  INFO 12316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68ms. Found 3 repository interfaces.
+2020-01-19 17:58:27.634  INFO 12316 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d4ff2a9-d64c-39c5-852f-d3919c7f24dc
+2020-01-19 17:58:27.775  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9bd3c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.821  INFO 12316 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-01-19 17:58:27.853  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.946  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.946  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.962  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7c94ff52' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.962  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.962  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.962  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.962  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:27.993  INFO 12316 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$778bfb3a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 17:58:28.712  INFO 12316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (https)
+2020-01-19 17:58:28.728  INFO 12316 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 17:58:28.728  INFO 12316 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 17:58:28.853  INFO 12316 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 17:58:28.853  INFO 12316 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2500 ms
+2020-01-19 17:58:29.259  INFO 12316 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-01-19 17:58:29.337  INFO 12316 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-01-19 17:58:29.462  INFO 12316 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-01-19 17:58:29.556  INFO 12316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 17:58:29.681  INFO 12316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 17:58:29.696  INFO 12316 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-19 17:58:30.649  INFO 12316 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-01-19 17:58:30.665  INFO 12316 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-19 17:58:30.774  INFO 12316 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-19 17:58:30.946  WARN 12316 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-19 17:58:32.243  INFO 12316 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4a758b08-1dbe-4286-95d8-6c8a9cd31dfb
+
+2020-01-19 17:58:32.415  INFO 12316 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28bb1b42, org.springframework.security.web.context.SecurityContextPersistenceFilter@32b6dcf1, org.springframework.security.web.header.HeaderWriterFilter@5766d669, org.springframework.security.web.authentication.logout.LogoutFilter@4443aa2e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@202ed1d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42ca8b24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@182e8db, org.springframework.security.web.session.SessionManagementFilter@4b1e4b14, org.springframework.security.web.access.ExceptionTranslationFilter@1e12f70f]
+2020-01-19 17:58:32.493  WARN 12316 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 17:58:32.493  INFO 12316 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 17:58:32.493  WARN 12316 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 17:58:32.493  INFO 12316 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 17:58:32.743  INFO 12316 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-19 17:58:33.337  INFO 12316 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-01-19 17:58:34.430  WARN 12316 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-01-19 17:58:34.649  INFO 12316 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-19 17:58:34.696  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-19 17:58:35.337  INFO 12316 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-19 17:58:35.337  INFO 12316 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-19 17:58:35.462  INFO 12316 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-19 17:58:35.462  INFO 12316 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-19 17:58:35.649  INFO 12316 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-19 17:58:35.915  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 17:58:36.071  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 17:58:36.071  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-19 17:58:36.071  INFO 12316 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-19 17:58:36.087  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579453116071 with initial instances count: 3
+2020-01-19 17:58:36.087  INFO 12316 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KONCENTRATOR-PLACANJA with eureka with status UP
+2020-01-19 17:58:36.087  INFO 12316 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579453116087, current=UP, previous=STARTING]
+2020-01-19 17:58:36.087  INFO 12316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081: registering service...
+2020-01-19 17:58:36.149  INFO 12316 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081 - registration status: 204
+2020-01-19 17:58:36.321  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:58:36.915  INFO 12316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (https) with context path ''
+2020-01-19 17:58:36.915  INFO 12316 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2020-01-19 17:58:37.274  INFO 12316 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : Started KoncentratorPlacanjaApplication in 13.073 seconds (JVM running for 14.761)
+2020-01-19 17:59:06.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 17:59:36.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:00:06.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:00:36.131  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:01:06.134  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:01:36.132  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:02:06.131  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:02:36.129  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:03:06.134  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:03:35.929  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:03:36.132  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:04:06.126  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:04:36.139  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:05:06.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:05:36.128  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:06:06.138  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:06:36.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:07:06.128  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:07:36.140  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:08:06.125  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:08:35.935  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:08:36.138  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:09:06.136  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:09:36.131  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:10:06.135  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:10:36.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:11:06.128  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:11:36.126  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:12:06.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:12:36.129  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:13:06.139  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:13:35.945  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:13:36.132  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:14:06.134  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:14:36.137  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:15:06.135  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:15:36.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:16:06.135  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:16:36.126  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:17:06.131  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:17:36.140  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:18:06.139  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:18:35.953  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:18:36.125  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:19:06.138  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:19:36.138  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:19:50.320  INFO 12316 --- [https-jsse-nio-8081-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 18:19:50.320  INFO 12316 --- [https-jsse-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-19 18:19:50.376  INFO 12316 --- [https-jsse-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 56 ms
+2020-01-19 18:20:06.132  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:20:36.132  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:21:05.626  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:21:05.672  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-banka-api
+2020-01-19 18:21:05.672  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: banka-api instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-01-19 18:21:05.672  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-01-19 18:21:05.704  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:21:05.704  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client banka-api initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[192.168.0.33:8088],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.33:8088;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@13e1aafc
+2020-01-19 18:21:06.125  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:21:06.688  INFO 12316 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:21:07.156  INFO 12316 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:21:07.188  INFO 12316 --- [https-jsse-nio-8081-exec-3] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/8bcecd2b-66a1-4958-9b64-990eb1fb05a6 , za podatke o placanju
+
+2020-01-19 18:21:36.135  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:22:06.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:22:36.129  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:23:06.127  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:23:35.957  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:23:36.125  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:23:42.170  INFO 12316 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:23:42.178  INFO 12316 --- [https-jsse-nio-8081-exec-2] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/2/e53ae5d0-a37d-4051-b0ae-0786044e3f63 , za podatke o placanju
+
+2020-01-19 18:23:57.583  INFO 12316 --- [https-jsse-nio-8081-exec-6] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je placeno preko BANKA-a .
+2020-01-19 18:24:06.147  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:24:36.136  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:25:06.125  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:25:36.134  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:26:06.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:26:36.130  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:27:06.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:27:36.129  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:28:06.147  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:28:35.962  INFO 12316 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:28:36.134  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:29:06.140  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:29:36.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:30:06.133  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:30:36.127  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:31:06.128  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:31:36.129  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:32:06.137  INFO 12316 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:32:42.744  INFO 7600 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : No active profile set, falling back to default profiles: default
+2020-01-19 18:32:43.662  INFO 7600 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-19 18:32:43.740  INFO 7600 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 3 repository interfaces.
+2020-01-19 18:32:44.131  INFO 7600 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d4ff2a9-d64c-39c5-852f-d3919c7f24dc
+2020-01-19 18:32:44.287  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$10e59846] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.349  INFO 7600 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-01-19 18:32:44.381  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.443  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.459  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.459  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5e866264' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.459  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.459  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.474  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.474  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:44.490  INFO 7600 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8867d644] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:32:45.131  INFO 7600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (https)
+2020-01-19 18:32:45.146  INFO 7600 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 18:32:45.146  INFO 7600 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 18:32:45.302  INFO 7600 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 18:32:45.302  INFO 7600 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2527 ms
+2020-01-19 18:32:45.823  INFO 7600 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-01-19 18:32:45.882  INFO 7600 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-01-19 18:32:45.998  INFO 7600 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-01-19 18:32:46.101  INFO 7600 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 18:32:46.242  INFO 7600 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 18:32:46.257  INFO 7600 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-19 18:32:47.441  INFO 7600 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-01-19 18:32:47.456  INFO 7600 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-19 18:32:47.675  INFO 7600 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-19 18:32:47.816  WARN 7600 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-19 18:32:49.113  INFO 7600 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ec466509-855e-4874-b484-5f0ac8b51ab8
+
+2020-01-19 18:32:49.299  INFO 7600 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@150151b8, org.springframework.security.web.context.SecurityContextPersistenceFilter@241e6698, org.springframework.security.web.header.HeaderWriterFilter@242b8ae, org.springframework.security.web.authentication.logout.LogoutFilter@73c20477, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7804cfc1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ea1d0aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d3d5e76, org.springframework.security.web.session.SessionManagementFilter@59b75e22, org.springframework.security.web.access.ExceptionTranslationFilter@6a93114e]
+2020-01-19 18:32:49.377  WARN 7600 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:32:49.377  INFO 7600 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:32:49.393  WARN 7600 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:32:49.393  INFO 7600 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:32:49.705  INFO 7600 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-19 18:32:50.542  INFO 7600 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-01-19 18:32:52.444  WARN 7600 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-01-19 18:32:52.866  INFO 7600 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-19 18:32:52.929  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-19 18:32:53.663  INFO 7600 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-19 18:32:53.663  INFO 7600 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-19 18:32:53.913  INFO 7600 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-19 18:32:53.913  INFO 7600 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-19 18:32:54.403  INFO 7600 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-19 18:32:54.891  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 18:32:55.730  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 18:32:55.746  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-19 18:32:55.746  INFO 7600 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-19 18:32:55.761  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579455175746 with initial instances count: 3
+2020-01-19 18:32:55.797  INFO 7600 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KONCENTRATOR-PLACANJA with eureka with status UP
+2020-01-19 18:32:55.797  INFO 7600 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579455175797, current=UP, previous=STARTING]
+2020-01-19 18:32:55.966  INFO 7600 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081: registering service...
+2020-01-19 18:32:56.524  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:32:57.871  INFO 7600 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081 - registration status: 204
+2020-01-19 18:33:00.741  INFO 7600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (https) with context path ''
+2020-01-19 18:33:00.745  INFO 7600 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2020-01-19 18:33:01.664  INFO 7600 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : Started KoncentratorPlacanjaApplication in 21.443 seconds (JVM running for 23.328)
+2020-01-19 18:33:25.873  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:33:54.481  INFO 7600 --- [https-jsse-nio-8081-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 18:33:54.481  INFO 7600 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-19 18:33:54.513  INFO 7600 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2020-01-19 18:33:54.774  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:33:54.805  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-banka-api
+2020-01-19 18:33:54.805  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.netflix.loadbalancer.BaseLoadBalancer  : Client: banka-api instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-01-19 18:33:54.821  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-01-19 18:33:54.836  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:33:54.852  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client banka-api initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[192.168.0.33:8088],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.33:8088;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@358592ef
+2020-01-19 18:33:55.835  INFO 7600 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:33:55.874  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:33:56.296  INFO 7600 --- [https-jsse-nio-8081-exec-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:33:56.343  INFO 7600 --- [https-jsse-nio-8081-exec-4] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/1603c110-e997-445f-ae45-a328f7a0d1fc , za podatke o placanju
+
+2020-01-19 18:34:25.879  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:34:55.875  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:35:25.872  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:35:55.882  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:36:25.872  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:36:49.611  INFO 7600 --- [https-jsse-nio-8081-exec-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:36:49.619  INFO 7600 --- [https-jsse-nio-8081-exec-5] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/2/501276da-daea-45b1-b7b3-7b4eecef48e6 , za podatke o placanju
+
+2020-01-19 18:36:55.924  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:37:25.877  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:37:54.919  INFO 7600 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:37:56.028  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:38:25.873  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:38:36.243  INFO 7600 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:38:36.251  INFO 7600 --- [https-jsse-nio-8081-exec-7] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/3/483850f5-4f52-4cc1-942f-021b6cbf5d16 , za podatke o placanju
+
+2020-01-19 18:38:49.827  INFO 7600 --- [https-jsse-nio-8081-exec-6] c.s.k.c.KoncentratorPlacanjaController   : 
+		Transakcija nije kreirana.
+2020-01-19 18:38:55.889  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:39:25.872  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:39:55.886  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:40:25.882  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:40:55.874  INFO 7600 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:41:35.743  INFO 1340 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : No active profile set, falling back to default profiles: default
+2020-01-19 18:41:37.384  INFO 1340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-19 18:41:37.525  INFO 1340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116ms. Found 3 repository interfaces.
+2020-01-19 18:41:38.212  INFO 1340 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d4ff2a9-d64c-39c5-852f-d3919c7f24dc
+2020-01-19 18:41:38.478  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$fafbdba0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.540  INFO 1340 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-01-19 18:41:38.587  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.696  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.712  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.712  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5fdc3709' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.728  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.728  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.743  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.743  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:38.774  INFO 1340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$727e199e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:41:39.853  INFO 1340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (https)
+2020-01-19 18:41:39.868  INFO 1340 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 18:41:39.868  INFO 1340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 18:41:40.071  INFO 1340 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 18:41:40.087  INFO 1340 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4312 ms
+2020-01-19 18:41:40.806  INFO 1340 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-01-19 18:41:40.915  INFO 1340 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-01-19 18:41:41.102  INFO 1340 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-01-19 18:41:41.274  INFO 1340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 18:41:41.477  INFO 1340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 18:41:41.493  INFO 1340 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-19 18:41:42.945  INFO 1340 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-01-19 18:41:42.945  INFO 1340 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-19 18:41:43.210  WARN 1340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-01-19 18:41:43.445  WARN 1340 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-19 18:41:45.632  INFO 1340 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 67038483-124c-4e9e-b515-98f2183a1d46
+
+2020-01-19 18:41:46.085  INFO 1340 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3172a97e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f863f74, org.springframework.security.web.header.HeaderWriterFilter@456a4dd1, org.springframework.security.web.authentication.logout.LogoutFilter@3bf20596, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@378cc544, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65db8fd6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ce9821f, org.springframework.security.web.session.SessionManagementFilter@70171b06, org.springframework.security.web.access.ExceptionTranslationFilter@654197b7]
+2020-01-19 18:41:46.163  WARN 1340 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:41:46.163  INFO 1340 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:41:46.179  WARN 1340 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:41:46.179  INFO 1340 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:41:46.460  INFO 1340 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-19 18:41:47.101  INFO 1340 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-01-19 18:41:48.194  WARN 1340 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-01-19 18:41:48.413  INFO 1340 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-19 18:41:48.444  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-19 18:41:49.085  INFO 1340 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-19 18:41:49.085  INFO 1340 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-19 18:41:49.210  INFO 1340 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-19 18:41:49.210  INFO 1340 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-19 18:41:49.397  INFO 1340 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-19 18:41:49.647  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 18:41:49.804  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 18:41:49.804  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-19 18:41:49.804  INFO 1340 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-19 18:41:49.819  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579455709819 with initial instances count: 3
+2020-01-19 18:41:49.819  INFO 1340 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KONCENTRATOR-PLACANJA with eureka with status UP
+2020-01-19 18:41:49.819  INFO 1340 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579455709819, current=UP, previous=STARTING]
+2020-01-19 18:41:49.835  INFO 1340 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081: registering service...
+2020-01-19 18:41:49.882  INFO 1340 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081 - registration status: 204
+2020-01-19 18:41:50.054  INFO 1340 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:41:50.647  INFO 1340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (https) with context path ''
+2020-01-19 18:41:50.647  INFO 1340 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2020-01-19 18:41:51.007  INFO 1340 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : Started KoncentratorPlacanjaApplication in 18.997 seconds (JVM running for 21.696)
+2020-01-19 18:42:19.864  INFO 1340 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:42:57.208  INFO 120 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : No active profile set, falling back to default profiles: default
+2020-01-19 18:42:58.082  INFO 120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-19 18:42:58.161  INFO 120 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69ms. Found 3 repository interfaces.
+2020-01-19 18:42:58.551  INFO 120 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9d4ff2a9-d64c-39c5-852f-d3919c7f24dc
+2020-01-19 18:42:58.692  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$4ab1a0ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.770  INFO 120 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-01-19 18:42:58.801  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.864  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1c4a6ff1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration' of type [org.springframework.security.config.annotation.method.configuration.Jsr250MetadataSourceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'jsr250MethodSecurityMetadataSource' of type [org.springframework.security.access.annotation.Jsr250MethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.879  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:58.911  INFO 120 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$c233dee8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-19 18:42:59.598  INFO 120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (https)
+2020-01-19 18:42:59.614  INFO 120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-19 18:42:59.614  INFO 120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-01-19 18:42:59.754  INFO 120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-19 18:42:59.754  INFO 120 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2515 ms
+2020-01-19 18:43:00.207  INFO 120 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-01-19 18:43:00.270  INFO 120 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.8.Final}
+2020-01-19 18:43:00.379  INFO 120 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-01-19 18:43:00.489  INFO 120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-19 18:43:00.629  INFO 120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-19 18:43:00.629  INFO 120 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-01-19 18:43:01.832  INFO 120 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-01-19 18:43:01.848  INFO 120 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-19 18:43:01.988  WARN 120 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-01-19 18:43:02.129  WARN 120 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-19 18:43:03.473  INFO 120 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8a9756c1-4a7e-46e1-ae04-9bd42cd348b4
+
+2020-01-19 18:43:03.645  INFO 120 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75b669d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@3573082a, org.springframework.security.web.header.HeaderWriterFilter@543bbd93, org.springframework.security.web.authentication.logout.LogoutFilter@7249b71d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78c2d2e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7dbd833, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@332e7f95, org.springframework.security.web.session.SessionManagementFilter@4a073dac, org.springframework.security.web.access.ExceptionTranslationFilter@1f8deb44]
+2020-01-19 18:43:03.738  WARN 120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:43:03.738  INFO 120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:43:03.738  WARN 120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-01-19 18:43:03.738  INFO 120 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-01-19 18:43:04.051  INFO 120 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-19 18:43:04.816  INFO 120 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-01-19 18:43:06.059  WARN 120 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-01-19 18:43:06.262  INFO 120 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-01-19 18:43:06.320  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-01-19 18:43:06.964  INFO 120 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-01-19 18:43:06.964  INFO 120 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-01-19 18:43:07.089  INFO 120 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-01-19 18:43:07.089  INFO 120 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-01-19 18:43:07.277  INFO 120 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-01-19 18:43:07.542  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-01-19 18:43:07.699  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-01-19 18:43:07.714  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-01-19 18:43:07.714  INFO 120 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-01-19 18:43:07.714  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1579455787714 with initial instances count: 3
+2020-01-19 18:43:07.730  INFO 120 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application KONCENTRATOR-PLACANJA with eureka with status UP
+2020-01-19 18:43:07.730  INFO 120 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1579455787730, current=UP, previous=STARTING]
+2020-01-19 18:43:07.730  INFO 120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081: registering service...
+2020-01-19 18:43:07.808  INFO 120 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_KONCENTRATOR-PLACANJA/DESKTOP-TS6FOPK:koncentrator-placanja:8081 - registration status: 204
+2020-01-19 18:43:07.949  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:43:08.511  INFO 120 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (https) with context path ''
+2020-01-19 18:43:08.511  INFO 120 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+2020-01-19 18:43:08.870  INFO 120 --- [restartedMain] c.s.k.KoncentratorPlacanjaApplication    : Started KoncentratorPlacanjaApplication in 13.842 seconds (JVM running for 15.582)
+2020-01-19 18:43:37.775  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:43:54.536  INFO 120 --- [https-jsse-nio-8081-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-19 18:43:54.536  INFO 120 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-19 18:43:54.570  INFO 120 --- [https-jsse-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
+2020-01-19 18:44:07.761  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:44:07.808  INFO 120 --- [https-jsse-nio-8081-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:44:07.855  INFO 120 --- [https-jsse-nio-8081-exec-3] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-banka-api
+2020-01-19 18:44:07.855  INFO 120 --- [https-jsse-nio-8081-exec-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: banka-api instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-01-19 18:44:07.855  INFO 120 --- [https-jsse-nio-8081-exec-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-01-19 18:44:07.886  INFO 120 --- [https-jsse-nio-8081-exec-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:44:07.886  INFO 120 --- [https-jsse-nio-8081-exec-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client banka-api initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=banka-api,current list of Servers=[192.168.0.33:8088],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.0.33:8088;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@1f685802
+2020-01-19 18:44:08.871  INFO 120 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: banka-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-19 18:44:09.324  INFO 120 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:44:09.355  INFO 120 --- [https-jsse-nio-8081-exec-3] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/04311f10-f5ab-46b5-99fe-739cae91598d , za podatke o placanju
+
+2020-01-19 18:44:24.011  INFO 120 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Transakcija nije kreirana.
+2020-01-19 18:44:37.773  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:45:07.765  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:45:37.763  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:46:07.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:46:37.762  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:47:07.771  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:47:37.815  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:48:07.561  INFO 120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:48:07.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:48:37.772  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:49:07.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:49:37.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:49:45.430  INFO 120 --- [https-jsse-nio-8081-exec-3] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:49:45.441  INFO 120 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/a7556a85-68b0-43a2-bcb9-f29d3476954c , za podatke o placanju
+
+2020-01-19 18:50:07.767  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:50:11.709  INFO 120 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Transakcija nije kreirana.
+2020-01-19 18:50:37.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:51:07.771  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:51:37.759  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:52:07.770  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:52:37.771  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:53:07.574  INFO 120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:53:07.777  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:53:37.763  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:54:07.761  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:54:37.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:55:07.761  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:55:37.759  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:56:07.761  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:56:37.759  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:56:38.782  INFO 120 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:56:38.798  INFO 120 --- [https-jsse-nio-8081-exec-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/6ffed396-ff05-4184-bec8-ecef6276e619 , za podatke o placanju
+
+2020-01-19 18:57:07.769  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:57:33.793  INFO 120 --- [https-jsse-nio-8081-exec-5] c.s.k.c.KoncentratorPlacanjaController   : 
+		Transakcija nije kreirana.
+2020-01-19 18:57:37.770  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:58:07.589  INFO 120 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-19 18:58:07.761  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:58:16.959  INFO 120 --- [https-jsse-nio-8081-exec-4] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-19 18:58:16.967  INFO 120 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/2/85642b9d-f699-4c6f-b813-910aec4215a0 , za podatke o placanju
+
+2020-01-19 18:58:37.775  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:58:38.241  INFO 120 --- [https-jsse-nio-8081-exec-9] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je placeno preko BANKA-a .
+2020-01-19 18:59:07.762  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 18:59:37.764  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 19:00:07.766  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-19 19:00:37.763  INFO 120 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+

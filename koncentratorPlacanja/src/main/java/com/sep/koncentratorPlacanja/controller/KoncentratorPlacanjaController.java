@@ -119,7 +119,7 @@ public class KoncentratorPlacanjaController {
             t.setUuid(transakcije.getUuid());
             t.setOrderId(transakcije.getOrderId());
             t.setCena(transakcije.getCena());
-            t.setTipPlacanja("BITCOIN");
+            t.setTipPlacanja(transakcije.getTipPlacanja());
             t.setVremeKreiranjaTransakcije(transakcije.getVremeKreiranjaTransakcije());
             ts.save(t);
             logger.info("\n\t\tUspesno je kreirana transakcija.\n");

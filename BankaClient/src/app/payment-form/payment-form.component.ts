@@ -16,6 +16,7 @@ export class PaymentFormComponent implements OnInit {
 
   ngOnInit() {
     this.card.paymentId = parseInt(this.route.snapshot.paramMap.get('paymentId'));
+    this.card.orderId = this.route.snapshot.paramMap.get('orderId');
   }
   sendCard(card: Card) {
     console.log(this.card);

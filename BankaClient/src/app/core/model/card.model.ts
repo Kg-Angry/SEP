@@ -4,7 +4,8 @@ export class Card {
   cardHolderName: string;
   datumVazenja: string;
   merchantUsername: string;
-  paymentId:number;
+  paymentId: number;
+  orderId: string;
   constructor() {
     this.cardHolderName = '';
     this.pan = '';
@@ -12,6 +13,7 @@ export class Card {
     this.datumVazenja = '';
     this.merchantUsername = '';
     this.paymentId = null;
+    this.orderId = '';
   }
 }
 
