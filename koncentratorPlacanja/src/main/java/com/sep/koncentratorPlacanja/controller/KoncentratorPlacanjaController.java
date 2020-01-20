@@ -1,8 +1,6 @@
 package com.sep.koncentratorPlacanja.controller;
 
-import com.sep.koncentratorPlacanja.dto.PlatilacDTO;
-import com.sep.koncentratorPlacanja.dto.TipPlacanjaDTO;
-import com.sep.koncentratorPlacanja.dto.TransakcijeDTO;
+import com.sep.koncentratorPlacanja.dto.*;
 import com.sep.koncentratorPlacanja.model.TipPlacanja;
 import com.sep.koncentratorPlacanja.model.TipPlacanjaModel;
 import com.sep.koncentratorPlacanja.model.Transakcije;
@@ -119,7 +117,7 @@ public class KoncentratorPlacanjaController {
             t.setUuid(transakcije.getUuid());
             t.setOrderId(transakcije.getOrderId());
             t.setCena(transakcije.getCena());
-            t.setTipPlacanja("BITCOIN");
+            t.setTipPlacanja(transakcije.getTipPlacanja());
             t.setVremeKreiranjaTransakcije(transakcije.getVremeKreiranjaTransakcije());
             ts.save(t);
             logger.info("\n\t\tUspesno je kreirana transakcija.\n");
@@ -130,8 +128,20 @@ public class KoncentratorPlacanjaController {
         return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 
+    @PostMapping(value = "/statusTransakcije")
+    public ResponseEntity<?> statusTransakcije(@RequestBody TransakcijeDTO transakcijeDTO){
+        Transakcije t = ts.findByOrderId(transakcijeDTO.getOrderId());
+        if(t!=null){
+            t.setStatus(transakcijeDTO.getStatus());
+            ts.save(t);
+            logger.info("\n\t\t Transakcija preko "+ transakcijeDTO.getTipPlacanja() +" je izvrsena "+ transakcijeDTO.getStatus());
+            return  ResponseEntity.ok("uspesno");
+        }else
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping(value = "/izmenjenStatusTransakcije")
-    private ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
+    public ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
     {
 
         Transakcije t = ts.findByOrderId(transakcije.getOrderId());
@@ -212,5 +222,17 @@ public class KoncentratorPlacanjaController {
             return true;
         }
         return false;
+    }
+
+    @PostMapping(value="/bankaPayment")
+    public String bankaPayment(@RequestBody PlatilacBankaDTO platilacBankaDTO)
+    {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<PlatilacBankaDTO> entity = new HttpEntity<>(platilacBankaDTO,headers);
+        String retval = restTemplate.postForObject("https://BANKA-API/"
+                +"startPayment",entity,String.class);
+        logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");
+        return retval;
     }
 }

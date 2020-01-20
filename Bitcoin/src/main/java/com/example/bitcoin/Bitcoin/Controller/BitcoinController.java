@@ -62,6 +62,7 @@ public class BitcoinController {
         trDTO.setNaziv(platilac.getNaziv_casopisa());
         trDTO.setVremeKreiranjaTransakcije(response.getCreated_at());
         trDTO.setStatus("kreirana");
+        trDTO.setTipPlacanja("BITCOIN");
         trDTO.setUplatilac(platilac.getKorisnicko_ime_platioca());
         String paymentUrl = response.getPayment_url();
         HttpHeaders h = new HttpHeaders();

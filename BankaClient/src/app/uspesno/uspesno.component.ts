@@ -20,7 +20,7 @@ export class UspesnoComponent implements OnInit {
       showConfirmButton: false,
       timer: 4500
     });
-    timer(5500).subscribe(t => location.href = 'https://localhost:4200/');
+    timer(4500).subscribe(t => location.href = 'https://localhost:4200/');
   }
 
 }

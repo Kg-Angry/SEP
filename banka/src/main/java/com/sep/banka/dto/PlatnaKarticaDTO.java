@@ -24,6 +24,8 @@ public class PlatnaKarticaDTO {
 
     private Timestamp issuerTimestamp;
 
+    private String orderId;
+
 
 
     public PlatnaKarticaDTO() {
@@ -108,5 +110,13 @@ public class PlatnaKarticaDTO {
 
     public void setIssuerTimestamp(Timestamp issuerTimestamp) {
         this.issuerTimestamp = issuerTimestamp;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 }
