@@ -130,8 +130,20 @@ public class KoncentratorPlacanjaController {
         return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 
+    @PostMapping(value = "/statusTransakcije")
+    public ResponseEntity<?> statusTransakcije(@RequestBody TransakcijeDTO transakcijeDTO){
+        Transakcije t = ts.findByOrderId(transakcijeDTO.getOrderId());
+        if(t!=null){
+            t.setStatus(transakcijeDTO.getStatus());
+            ts.save(t);
+            logger.info("\n\t\t Transakcija preko "+ transakcijeDTO.getTipPlacanja() +" je izvrsena "+ transakcijeDTO.getStatus());
+            return  ResponseEntity.ok("uspesno");
+        }else
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping(value = "/izmenjenStatusTransakcije")
-    private ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
+    public ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
     {
 
         Transakcije t = ts.findByOrderId(transakcije.getOrderId());

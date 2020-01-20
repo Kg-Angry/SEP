@@ -36,6 +36,7 @@ public class PccController {
             karticaDTO = restTemplate.postForObject("https://BANKA-API/checkCard", entity, PlatnaKarticaDTO.class);
         }catch (Exception e){
             ResponseDTO responseDTO = new ResponseDTO();
+            restTemplate.postForObject("https://BANKA-API/neuspesno", entity, ResponseDTO.class);
             responseDTO.setStatusTransakcije("https://localhost:4201//greska");
             logger.info("\n\t\t Greska prilikom provere kartice");
         }
@@ -48,6 +49,7 @@ public class PccController {
             }catch (Exception  e){
                 logger.info("\n\t\t Greska prilikom placanja");
                 ResponseDTO responseDTO = new ResponseDTO();
+                restTemplate.postForObject("https://BANKA-API/neuspesno", entityKartica, ResponseDTO.class);
                 responseDTO.setStatusTransakcije("https://localhost:4201/greska");
                 return responseDTO;
             }
@@ -55,6 +57,8 @@ public class PccController {
             logger.info("\n\t\t Kartica nije pronadjena");
             ResponseDTO responseDTO = new ResponseDTO();
             responseDTO.setStatusTransakcije("https://localhost:4201/neuspesno");
+            HttpEntity<PlatnaKarticaDTO> entityKartica = new HttpEntity<>(platnaKarticaDTO,header);
+            restTemplate.postForObject("https://BANKA-API/neuspesno", entityKartica, ResponseDTO.class);
             return responseDTO;
         }
 

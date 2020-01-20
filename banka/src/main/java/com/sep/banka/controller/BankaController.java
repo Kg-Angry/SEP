@@ -101,6 +101,9 @@ public class BankaController {
             //kupac nije uneo dobre podatke kartic,transakcije neuspela ili da vratimo da unosi ponovo ?
             return null;
         }
+        TransakcijeDTO transakcijeDTO = new TransakcijeDTO();
+        transakcijeDTO.setOrderId(platnaKarticaDTO.getOrderId());
+        transakcijeDTO.setTipPlacanja("BANKA");
         logger.info("\n\t\t Pokrenuto placanje");
         PlatnaKartica karticaKupca = platnaKarticaService.getKupacKartica(platnaKarticaDTO);
         PlatnaKartica karticaProdavca = platnaKarticaService.getProdavacKartica(platnaKarticaDTO);
@@ -109,17 +112,16 @@ public class BankaController {
         if(zahtev!=null){
             if(karticaKupca.getAmount().compareTo(zahtev.getAmount())>0){
                 karticaKupca.setAmount(karticaKupca.getAmount().subtract(zahtev.getAmount()));
-                karticaKupca = platnaKarticaService.save(karticaKupca);
+                platnaKarticaService.save(karticaKupca);
                 karticaProdavca.setAmount(karticaProdavca.getAmount().add(zahtev.getAmount()));
-                karticaProdavca = platnaKarticaService.save(karticaProdavca);
-                TransakcijeDTO transakcijeDTO = new TransakcijeDTO();
-                transakcijeDTO.setOrderId(platnaKarticaDTO.getOrderId());
+                platnaKarticaService.save(karticaProdavca);
+
                 transakcijeDTO.setStatus("uspesno");
                 HttpHeaders headers = new HttpHeaders();
                 HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
                 headers.setContentType(MediaType.APPLICATION_JSON);
-                logger.info("\n\t\t Menjanje statusa transakcije");
-                restTemplate.postForObject("https://koncentrator-placanja/api1/kp/izmenjenStatusTransakcije",transakcija,String.class);
+                logger.info("\n\t\t Menjanje statusa transakcije uspesno");
+                restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
 
                 logger.info("\n\t\t Placanje je uspesno izvrseno");
 
@@ -127,7 +129,29 @@ public class BankaController {
             }
         }
         logger.info("\n\t\t Placanje nije uspesno izvrseno");
+        transakcijeDTO.setStatus("neuspesno");
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
+        headers.setContentType(MediaType.APPLICATION_JSON);
 
+        logger.info("\n\t\t Menjanje statusa transakcije neuspesno");
+        restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
+
+        return paymentService.getResponse(platnaKarticaDTO,"https://localhost:4201/neuspesno");
+    }
+
+    @PostMapping(value="/neuspesno")
+    public ResponseDTO neuspesno(@RequestBody PlatnaKarticaDTO platnaKarticaDTO){
+        TransakcijeDTO transakcijeDTO = new TransakcijeDTO();
+        transakcijeDTO.setOrderId(platnaKarticaDTO.getOrderId());
+        transakcijeDTO.setTipPlacanja("BANKA");
+        transakcijeDTO.setStatus("neuspesno");
+        HttpHeaders headers = new HttpHeaders();
+        HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        logger.info("\n\t\t Menjanje statusa transakcije neuspesno");
+        restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
         return paymentService.getResponse(platnaKarticaDTO,"https://localhost:4201/neuspesno");
     }
 
