@@ -1,8 +1,6 @@
 package com.sep.koncentratorPlacanja.controller;
 
-import com.sep.koncentratorPlacanja.dto.PlatilacDTO;
-import com.sep.koncentratorPlacanja.dto.TipPlacanjaDTO;
-import com.sep.koncentratorPlacanja.dto.TransakcijeDTO;
+import com.sep.koncentratorPlacanja.dto.*;
 import com.sep.koncentratorPlacanja.model.TipPlacanja;
 import com.sep.koncentratorPlacanja.model.TipPlacanjaModel;
 import com.sep.koncentratorPlacanja.model.Transakcije;
@@ -224,5 +222,17 @@ public class KoncentratorPlacanjaController {
             return true;
         }
         return false;
+    }
+
+    @PostMapping(value="/bankaPayment")
+    public String bankaPayment(@RequestBody PlatilacBankaDTO platilacBankaDTO)
+    {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<PlatilacBankaDTO> entity = new HttpEntity<>(platilacBankaDTO,headers);
+        String retval = restTemplate.postForObject("https://BANKA-API/"
+                +"startPayment",entity,String.class);
+        logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");
+        return retval;
     }
 }
