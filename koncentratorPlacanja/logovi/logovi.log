@@ -394,3 +394,162 @@ Using generated security password: e801052b-001c-4543-adb6-8322e77ed193
 2020-01-21 01:28:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
 		Provera statusa transakcije.
 
+2020-01-21 01:28:37.028  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:29:07.034  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:29:37.149  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:30:07.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:30:37.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:31:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:31:35.176  INFO 19084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:31:37.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:32:07.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:32:37.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:32:56.887  INFO 19084 --- [https-jsse-nio-8081-exec-5] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-21 01:32:57.439  INFO 19084 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/b6d1664f-499e-4f49-9570-5fbc8a6603ad , za podatke o placanju
+
+2020-01-21 01:33:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:33:26.415  INFO 19084 --- [https-jsse-nio-8081-exec-9] c.s.k.c.KoncentratorPlacanjaController   : 
+		 Transakcija preko BANKA je izvrsena uspesno
+2020-01-21 01:33:37.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:34:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:34:37.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:35:07.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:35:32.822  INFO 19084 --- [https-jsse-nio-8081-exec-6] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-21 01:35:32.893  INFO 19084 --- [https-jsse-nio-8081-exec-2] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/2/464215ea-0be2-4046-b56a-61416244c3e9 , za podatke o placanju
+
+2020-01-21 01:35:37.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:36:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:36:14.618  INFO 19084 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		 Transakcija preko BANKA je izvrsena uspesno
+2020-01-21 01:36:35.179  INFO 19084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:36:37.053  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:37:07.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:37:37.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:38:07.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:38:37.029  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:39:07.033  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:39:23.956  INFO 19084 --- [https-jsse-nio-8081-exec-10] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-21 01:39:24.605  INFO 19084 --- [https-jsse-nio-8081-exec-2] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://localhost:4201/banka/1/3badbea4-1243-4265-999e-f86ffa74ba2c , za podatke o placanju
+
+2020-01-21 01:39:37.031  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:39:45.500  INFO 19084 --- [https-jsse-nio-8081-exec-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		 Transakcija preko BANKA je izvrsena uspesno
+2020-01-21 01:40:07.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:40:37.041  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:41:07.033  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:41:35.232  INFO 19084 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:41:37.030  INFO 19084 --- [scheduling-1] c.s.k.c.KoncentratorPlacanjaController   : 
+		Provera statusa transakcije.
+
+2020-01-21 01:41:50.391  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.netflix.config.ChainedDynamicProperty  : Flipping property: bitcoin-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-21 01:41:50.407  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.n.u.concurrent.ShutdownEnabledTimer    : Shutdown hook installed for: NFLoadBalancer-PingTimer-bitcoin-api
+2020-01-21 01:41:50.408  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.netflix.loadbalancer.BaseLoadBalancer  : Client: bitcoin-api instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=bitcoin-api,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-01-21 01:41:50.420  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2020-01-21 01:41:50.425  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.netflix.config.ChainedDynamicProperty  : Flipping property: bitcoin-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-21 01:41:50.430  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client bitcoin-api initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=bitcoin-api,current list of Servers=[192.168.56.1:8082],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:8082;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@43ce9bd7
+2020-01-21 01:41:51.423  INFO 19084 --- [PollingServerListUpdater-1] c.netflix.config.ChainedDynamicProperty  : Flipping property: bitcoin-api.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-21 01:41:54.709  INFO 19084 --- [https-jsse-nio-8081-exec-8] c.s.k.c.KoncentratorPlacanjaController   : 
+		Uspesno je kreirana transakcija.
+
+2020-01-21 01:41:54.760  INFO 19084 --- [https-jsse-nio-8081-exec-7] c.s.k.c.KoncentratorPlacanjaController   : 
+		Redirekcija na adresu: https://sandbox.coingate.com/invoice/70d2bd06-c51e-49af-968b-d69fdfde0bab
+
+2020-01-21 01:42:07.071 ERROR 19084 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.text.ParseException: Unparseable date: "2020-01-21T00:41:54+00:00"
+	at java.text.DateFormat.parse(DateFormat.java:366) ~[na:1.8.0_221]
+	at com.sep.koncentratorPlacanja.controller.KoncentratorPlacanjaController.checkStatus(KoncentratorPlacanjaController.java:204) ~[classes/:na]
+	at sun.reflect.GeneratedMethodAccessor113.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_221]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_221]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_221]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+
+2020-01-21 01:42:37.032 ERROR 19084 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.text.ParseException: Unparseable date: "2020-01-21T00:41:54+00:00"
+	at java.text.DateFormat.parse(DateFormat.java:366) ~[na:1.8.0_221]
+	at com.sep.koncentratorPlacanja.controller.KoncentratorPlacanjaController.checkStatus(KoncentratorPlacanjaController.java:204) ~[classes/:na]
+	at sun.reflect.GeneratedMethodAccessor113.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_221]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_221]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_221]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_221]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_221]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_221]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_221]
+

@@ -1284,3 +1284,25 @@ Using generated security password: ad335c6d-ff92-4ea7-9097-7146455458a2
 2020-01-21 01:19:30.526  INFO 15500 --- [https-jsse-nio-8089-exec-7] com.sep.pcc.controller.PccController     : 
 		 Kartica je pronadjena, preusmeravanje na placanje
 2020-01-21 01:19:30.760  INFO 15500 --- [PollingServerListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: BANKA-API.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-01-21 01:23:44.045  INFO 15500 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:28:44.049  INFO 15500 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:33:25.951  INFO 15500 --- [https-jsse-nio-8089-exec-4] com.sep.pcc.controller.PccController     : 
+		 Preusmeren na drugu banku
+2020-01-21 01:33:25.951  INFO 15500 --- [https-jsse-nio-8089-exec-4] com.sep.pcc.controller.PccController     : 
+		 Provera kartice korinika
+2020-01-21 01:33:26.181  INFO 15500 --- [https-jsse-nio-8089-exec-4] com.sep.pcc.controller.PccController     : 
+		 Kartica je pronadjena, preusmeravanje na placanje
+2020-01-21 01:33:44.052  INFO 15500 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:36:14.435  INFO 15500 --- [https-jsse-nio-8089-exec-10] com.sep.pcc.controller.PccController     : 
+		 Preusmeren na drugu banku
+2020-01-21 01:36:14.436  INFO 15500 --- [https-jsse-nio-8089-exec-10] com.sep.pcc.controller.PccController     : 
+		 Provera kartice korinika
+2020-01-21 01:36:14.481  INFO 15500 --- [https-jsse-nio-8089-exec-10] com.sep.pcc.controller.PccController     : 
+		 Kartica je pronadjena, preusmeravanje na placanje
+2020-01-21 01:38:44.059  INFO 15500 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-01-21 01:39:44.996  INFO 15500 --- [https-jsse-nio-8089-exec-8] com.sep.pcc.controller.PccController     : 
+		 Preusmeren na drugu banku
+2020-01-21 01:39:44.997  INFO 15500 --- [https-jsse-nio-8089-exec-8] com.sep.pcc.controller.PccController     : 
+		 Provera kartice korinika
+2020-01-21 01:39:45.301  INFO 15500 --- [https-jsse-nio-8089-exec-8] com.sep.pcc.controller.PccController     : 
+		 Kartica je pronadjena, preusmeravanje na placanje
