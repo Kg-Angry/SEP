@@ -56,7 +56,6 @@ public class PlatnaKarticaServiceImpl implements PlatnaKarticaService {
         Zahtev zahtev =  zahtevi.stream().filter(x-> x.getPaymentId().compareTo(platnaKarticaDTO.getPaymentId())==0).findAny().orElse(null);
         List<PlatnaKartica> kartice = getAllPlatneKartice();
         List<PlatnaKartica> karticeProdavaca = new ArrayList<>();
-        System.out.println(zahtev.getMerchantUsername());
         String[] prodavciUsername=zahtev.getMerchantUsername().split(",");
         for(String username: prodavciUsername) {
             karticeProdavaca.add(kartice.stream().filter(x -> x.getMerchantUsername().equals(username) && x.getMerchantUsername() != null).findAny().orElse(null));

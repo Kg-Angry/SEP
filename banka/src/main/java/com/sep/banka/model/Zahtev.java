@@ -1,10 +1,10 @@
 package com.sep.banka.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Zahtev {
@@ -22,6 +22,9 @@ public class Zahtev {
     private String successUrl;
     private String failedUrl;
     private String errorUrl;
+
+    @OneToMany(mappedBy = "zahtev", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<ZahtevCasopisi> zahtevCasopisis = new HashSet<>();
 
     public Zahtev() {
     }
@@ -104,5 +107,14 @@ public class Zahtev {
 
     public void setErrorUrl(String errorUrl) {
         this.errorUrl = errorUrl;
+    }
+
+
+    public Set<ZahtevCasopisi> getZahtevCasopisis() {
+        return zahtevCasopisis;
+    }
+
+    public void setZahtevCasopisis(Set<ZahtevCasopisi> zahtevCasopisis) {
+        this.zahtevCasopisis = zahtevCasopisis;
     }
 }

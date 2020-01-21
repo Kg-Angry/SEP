@@ -4,8 +4,10 @@ import com.sep.banka.dto.*;
 import com.sep.banka.model.Payment;
 import com.sep.banka.model.PlatnaKartica;
 import com.sep.banka.model.Zahtev;
+import com.sep.banka.model.ZahtevCasopisi;
 import com.sep.banka.service.PaymentService;
 import com.sep.banka.service.PlatnaKarticaService;
+import com.sep.banka.service.ZahtevCasopisiService;
 import com.sep.banka.service.ZahtevService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @CrossOrigin
@@ -34,6 +37,8 @@ public class BankaController {
     PaymentService paymentService;
     @Autowired
     ZahtevService zahtevService;
+    @Autowired
+    ZahtevCasopisiService zahtevCasopisiService;
     @Autowired
     RestTemplate restTemplate;
 
@@ -69,7 +74,14 @@ public class BankaController {
             payment = paymentService.save(payment);
             payment.setPaymentUrl("https://localhost:4201/banka/"+payment.getIdPayment());
             logger.info("\n\t\t Kreiranje payment sa id-jem"+payment.getIdPayment());
-            zahtevService.save(platilacBankaDTO,payment.getIdPayment());
+            Zahtev zahtev = zahtevService.save(platilacBankaDTO,payment.getIdPayment());
+            for(NaucniCasopisDTO naucniCasopisDTO: platilacBankaDTO.getNazivi_casopisa()){
+                ZahtevCasopisi zahtevCasopisi = new ZahtevCasopisi();
+                zahtevCasopisi.setCena(naucniCasopisDTO.getCena());
+                zahtevCasopisi.setMerchantUsername(naucniCasopisDTO.getNaziv());
+                zahtevCasopisi.setZahtev(zahtev);
+                zahtevCasopisiService.save(zahtevCasopisi);
+            }
             logger.info("\n\t\t Kartica prodavca postoji, preusmeravnje na formu za unos podataka platioca");
 
             payment.setPaymentUrl(payment.getPaymentUrl()+"/"+transakcijeDTO.getOrderId());
@@ -113,11 +125,24 @@ public class BankaController {
                     flag=false;
             }
         }
+        TransakcijeDTO transakcijeDTO = new TransakcijeDTO();
+        transakcijeDTO.setOrderId(platnaKarticaDTO.getOrderId());
+        transakcijeDTO.setTipPlacanja("BANKA");
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         if(flag){
             response.setStatusTransakcije("https://localhost:4201/uspesno");
+            transakcijeDTO.setStatus("uspesno");
+            HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
+            logger.info("\n\t\t Menjanje statusa transakcije uspesno");
+            restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
             return new ResponseEntity<>(response, HttpStatus.OK);
         }else{
             response.setStatusTransakcije("https://localhost:4201/neuspesno");
+            transakcijeDTO.setStatus("neuspesno");
+            HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
+            logger.info("\n\t\t Menjanje statusa transakcije neuspesno");
+            restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
     }
@@ -129,41 +154,24 @@ public class BankaController {
             //kupac nije uneo dobre podatke kartic,transakcije neuspela ili da vratimo da unosi ponovo ?
             return null;
         }
-        TransakcijeDTO transakcijeDTO = new TransakcijeDTO();
-        transakcijeDTO.setOrderId(platnaKarticaDTO.getOrderId());
-        transakcijeDTO.setTipPlacanja("BANKA");
         logger.info("\n\t\t Pokrenuto placanje");
         PlatnaKartica karticaKupca = platnaKarticaService.getKupacKartica(platnaKarticaDTO);
         PlatnaKartica karticaProdavca = platnaKarticaService.getKartica(platnaKarticaDTO);
         Zahtev zahtev = zahtevService.getByPaymentId(platnaKarticaDTO.getPaymentId());
-
+        Set<ZahtevCasopisi> zahtevCasopisiSet= zahtev.getZahtevCasopisis();
+        ZahtevCasopisi zahtevCasopisi = zahtevCasopisiSet.stream().filter(x->x.getMerchantUsername().equals(platnaKarticaDTO.getMerchantUsername())).findAny().orElse(null);
         if(zahtev!=null){
-            if(karticaKupca.getAmount().compareTo(zahtev.getAmount())>0){
-                karticaKupca.setAmount(karticaKupca.getAmount().subtract(zahtev.getAmount()));
-                platnaKarticaService.save(karticaKupca);
-                karticaProdavca.setAmount(karticaProdavca.getAmount().add(zahtev.getAmount()));
+            if(karticaKupca.getAmount().compareTo(zahtevCasopisi.getCena())>0){
+                karticaKupca.setAmount(karticaKupca.getAmount().subtract(zahtevCasopisi.getCena()));
+                PlatnaKartica platnaKartica = platnaKarticaService.save(karticaKupca);
+                karticaProdavca.setAmount(karticaProdavca.getAmount().add(zahtevCasopisi.getCena()));
                 platnaKarticaService.save(karticaProdavca);
 
-                transakcijeDTO.setStatus("uspesno");
-                HttpHeaders headers = new HttpHeaders();
-                HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
-                headers.setContentType(MediaType.APPLICATION_JSON);
-                logger.info("\n\t\t Menjanje statusa transakcije uspesno");
-                restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
-
                 logger.info("\n\t\t Placanje je uspesno izvrseno");
-
                 return paymentService.getResponse(platnaKarticaDTO,"https://localhost:4201/uspesno");
             }
         }
         logger.info("\n\t\t Placanje nije uspesno izvrseno");
-        transakcijeDTO.setStatus("neuspesno");
-        HttpHeaders headers = new HttpHeaders();
-        HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        logger.info("\n\t\t Menjanje statusa transakcije neuspesno");
-        restTemplate.postForEntity("https://koncentrator-placanja/api1/kp/statusTransakcije",transakcija,String.class);
 
         return paymentService.getResponse(platnaKarticaDTO,"https://localhost:4201/neuspesno");
     }
