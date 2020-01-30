@@ -143,6 +143,7 @@ public class KoncentratorPlacanjaController {
     @PostMapping(value = "/izmenjenStatusTransakcije")
     public ResponseEntity izmenjenStatusTransakcije(@RequestBody TransakcijeDTO transakcije)
     {
+        System.out.println("OrderId: " + transakcije.getOrderId());
 
         Transakcije t = ts.findByOrderId(transakcije.getOrderId());
         if(t!=null)
@@ -152,7 +153,7 @@ public class KoncentratorPlacanjaController {
                 String tipPlacanja = t.getTipPlacanja();
                 ts.save(t);
                 logger.info("\n\t\tUspesno je placeno preko "+tipPlacanja+"-a .");
-                return new ResponseEntity(HttpStatus.OK);
+                return ResponseEntity.ok(true);
             }else if(transakcije.getStatus().equals("neuspesno"))
             {
                 t.setStatus(transakcije.getStatus());

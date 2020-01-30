@@ -2,7 +2,10 @@ package com.example.paypal.PayPal.Controller;
 
 import com.example.paypal.PayPal.DTO.PayPalProfileDTO;
 import com.example.paypal.PayPal.DTO.PlatilacDTO;
+import com.example.paypal.PayPal.DTO.TopSecretDataDTO;
 import com.example.paypal.PayPal.DTO.TransakcijeDTO;
+import com.example.paypal.PayPal.Model.TopSecretData;
+import com.example.paypal.PayPal.Service.TopSecretDataService;
 import com.paypal.api.payments.*;
 import com.paypal.api.payments.Currency;
 import com.paypal.base.rest.APIContext;
@@ -26,8 +29,15 @@ public class PayPalController {
     @Autowired
     RestTemplate restTemplate;
 
-    private static String clientId = "Ae_29b_0t76NauXNqN2GpLBl7CAR82-AoEOGpn4OpY29CBNLDVdD4QwKdheDsBHafoQvs_HLnCRGYSbm";
-    private static String clientSecret = "EBtg38K9znkZNdNgrib5mZDdifDYzMqVYHLybGuaftjFd8Q76ag5tjZuxytET2DczXDXxWBP-vp2c97K";
+    @Autowired
+    private TopSecretDataService tsds;
+
+//    private static String clientId = "Ae_29b_0t76NauXNqN2GpLBl7CAR82-AoEOGpn4OpY29CBNLDVdD4QwKdheDsBHafoQvs_HLnCRGYSbm";
+//    private static String clientSecret = "EBtg38K9znkZNdNgrib5mZDdifDYzMqVYHLybGuaftjFd8Q76ag5tjZuxytET2DczXDXxWBP-vp2c97K";
+
+    private static String clientId="";
+    private static String clientSecret="";
+    private static String planID="";
 
     @RequestMapping(method = RequestMethod.POST, value="/startPayment")
     public String paypal(@RequestBody PlatilacDTO platilac)
@@ -71,7 +81,10 @@ public class PayPalController {
         Payment createdPayment;
         try {
             String redirectUrl = "";
-            APIContext context = new APIContext(clientId, clientSecret, "sandbox");
+            TopSecretData topSecretData = tsds.findByNazivCasopisa(platilac.getNaziv_casopisa());
+            clientId=topSecretData.getClientId();
+            clientSecret=topSecretData.getClientSecret();
+            APIContext context = new APIContext(topSecretData.getClientId(), topSecretData.getClientSecret(), "sandbox");
             createdPayment = payment.create(context);
             if(createdPayment!=null){
                 List<Links> links = createdPayment.getLinks();
@@ -113,7 +126,7 @@ public class PayPalController {
         payment.setId(payPalProfileDTO.getPaymentId());
         PaymentExecution paymentExecution = new PaymentExecution();
         paymentExecution.setPayerId(payPalProfileDTO.getPayerID());
-        System.out.println("Transakcija Oreder: " + orderId);
+
         boolean statusTransakcije = restTemplate.getForObject("https://koncentrator-placanja/api1/kp/transakcije/"+orderId,Boolean.class);
         if(statusTransakcije)
             return false;
@@ -123,8 +136,7 @@ public class PayPalController {
             if(createdPayment!=null){
                 response.put("status", "success");
                 response.put("payment", createdPayment);
-                //System.out.println("RESPONSE COMPLETE: " + response);
-//                restTemplate.getForObject("https://koncentrator-placanja/api1/kp/transakcije/"+orderId,);
+
                 return true;
             }
 
@@ -181,6 +193,9 @@ public class PayPalController {
         p.setMerchantPreferences(mp);
 
         try {
+            TopSecretData topSecretData = tsds.findByNazivCasopisa(platilacDTO.getNaziv_casopisa());
+            clientId=topSecretData.getClientId();
+            clientSecret=topSecretData.getClientSecret();
             APIContext apiContext = new APIContext(clientId,clientSecret, "sandbox");
             // Create payment
             Plan createdPlan = p.create(apiContext);
@@ -202,7 +217,23 @@ public class PayPalController {
 
             System.out.println("Stanje nakon UPDATE: " + createdPlan.getState());
 
-            System.out.println("Vratio je: " + creiranje_ugovora_za_pretplatu(platilacDTO, createdPlan.getId(), apiContext));
+            //System.out.println("Vratio je: " + creiranje_ugovora_za_pretplatu(platilacDTO, createdPlan.getId(), apiContext));
+
+            TransakcijeDTO trDTO = new TransakcijeDTO();
+
+            trDTO.setIdTransakcije(platilacDTO.getId_porudzbine().toString());
+            trDTO.setNaziv(platilacDTO.getNaziv_casopisa());
+            trDTO.setOrderId(createdPlan.getId()); //stavio sa ID plana da se cuva kao transakcija OrderID
+            planID = createdPlan.getId();
+            trDTO.setStatus("kreirana");
+            trDTO.setUplatilac(platilacDTO.getKorisnicko_ime_platioca());
+            trDTO.setUuid(UUID.randomUUID().toString());
+            trDTO.setCena(platilacDTO.getCena());
+            trDTO.setVremeKreiranjaTransakcije(new Date().toString());
+            HttpHeaders h = new HttpHeaders();
+            HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(trDTO,h);
+            restTemplate.postForObject("https://koncentrator-placanja/api1/kp/kreiranaPayPalTransakcija",transakcija,String.class);
+
             return creiranje_ugovora_za_pretplatu(platilacDTO, createdPlan.getId(), apiContext);
 
         }catch (PayPalRESTException e) {
@@ -269,13 +300,42 @@ public class PayPalController {
             System.out.println("Agreement: " + activeAgreement);
             for (Links links : activeAgreement.getLinks()) {
                URL url = new URL(links.getHref());
+               TransakcijeDTO transakicje = new TransakcijeDTO();
+               transakicje.setOrderId(planID);
+                transakicje.setStatus("uspesno");
 
-                    return url.toString();
+                boolean statusTransakcije = restTemplate.postForObject("https://koncentrator-placanja/api1/kp/izmenjenStatusTransakcije",transakicje,Boolean.class);
+
+                return url.toString();
 
                 }
             } catch (PayPalRESTException | MalformedURLException ex) {
-            ex.printStackTrace();
+
+            TransakcijeDTO transakicje = new TransakcijeDTO();
+            transakicje.setOrderId(planID);
+            transakicje.setStatus("neuspesno");
+
+            boolean statusTransakcije = restTemplate.postForObject("https://koncentrator-placanja/api1/kp/izmenjenStatusTransakcije",transakicje,Boolean.class);
         }
         return null;
+    }
+
+    @PostMapping(value="/saveSecret")
+    public ResponseEntity<?> saveSecret(@RequestBody TopSecretDataDTO t)
+    {
+        TopSecretData tsd = tsds.findByNazivCasopisa(t.getNazivCasopisa());
+
+        if(tsd!=null)
+        {
+            TopSecretData tsd1 = new TopSecretData();
+            tsd1.setNazivCasopisa(t.getNazivCasopisa());
+            tsd1.setClientId(t.getClientId());
+            tsd1.setClientSecret(t.getClientSecret());
+            tsds.save(tsd1);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else
+        {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
     }
 }
