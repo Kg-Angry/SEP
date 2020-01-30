@@ -1,5 +1,6 @@
 package com.sep.banka.serviceImpl;
 
+import com.sep.banka.dto.BankaSecretDTO;
 import com.sep.banka.dto.NaucniCasopisDTO;
 import com.sep.banka.dto.PlatnaKarticaDTO;
 import com.sep.banka.model.PlatnaKartica;
@@ -35,15 +36,15 @@ public class PlatnaKarticaServiceImpl implements PlatnaKarticaService {
     }
 
     @Override
-    public Boolean prodavacImaKarticu(String merchantUsername) {
+    public Boolean prodavacImaKarticu(String clientId,String clientPass) {
         List<PlatnaKartica> platnaKarticas = platnaKarticaRepository.findAll();
-        return  platnaKarticas.stream().anyMatch(x-> x.getMerchantUsername().equals(merchantUsername));
+        return  platnaKarticas.stream().anyMatch(x-> x.getMerchantClientId().equals(clientId) && x.getMerchantClientPassword().equals(clientPass));
     }
 
     @Override
-    public Boolean prodavciImajuKarticu(Set<NaucniCasopisDTO> casopisi) {
-        for(NaucniCasopisDTO naucniCasopisDTO : casopisi){
-            if(!prodavacImaKarticu(naucniCasopisDTO.getNaziv())){
+    public Boolean prodavciImajuKarticu(Set<BankaSecretDTO> bankaSecretDTOS) {
+        for(BankaSecretDTO bankaSecretDTO : bankaSecretDTOS){
+            if(!prodavacImaKarticu(bankaSecretDTO.getClientId(),bankaSecretDTO.getClientPassword())){
                 return false;
             }
         }
@@ -58,10 +59,9 @@ public class PlatnaKarticaServiceImpl implements PlatnaKarticaService {
         List<PlatnaKartica> karticeProdavaca = new ArrayList<>();
         String[] prodavciUsername=zahtev.getMerchantUsername().split(",");
         for(String username: prodavciUsername) {
-            karticeProdavaca.add(kartice.stream().filter(x -> x.getMerchantUsername().equals(username) && x.getMerchantUsername() != null).findAny().orElse(null));
+            karticeProdavaca.add(kartice.stream().filter(x -> x.getCardHolderName().equals(username) && x.getCardHolderName() != null).findAny().orElse(null));
         }
         return karticeProdavaca;
-
     }
 
     @Override
@@ -69,7 +69,7 @@ public class PlatnaKarticaServiceImpl implements PlatnaKarticaService {
         List<Zahtev> zahtevi = zahtevRepository.findAll();
         Zahtev zahtev =  zahtevi.stream().filter(x-> x.getPaymentId().compareTo(platnaKarticaDTO.getPaymentId())==0).findAny().orElse(null);
         List<PlatnaKartica> kartice = getAllPlatneKartice();
-        PlatnaKartica platnaKartica = kartice.stream().filter(x -> x.getMerchantUsername().equals(platnaKarticaDTO.getMerchantUsername()) && x.getMerchantUsername() != null).findAny().orElse(null);
+        PlatnaKartica platnaKartica = kartice.stream().filter(x -> x.getMerchantClientId().equals(platnaKarticaDTO.getMerchantClientId()) && x.getMerchantClientId() != null && x.getMerchantClientPassword().equals(platnaKarticaDTO.getMerchantClientPassword()) && x.getMerchantClientPassword() != null   ).findAny().orElse(null);
         return platnaKartica;
     }
 

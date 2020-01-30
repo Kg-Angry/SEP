@@ -21,7 +21,9 @@ public class PlatnaKartica {
 
     private String datumVazenja;
 
-    private String merchantUsername;
+    private String merchantClientId;
+
+    private String merchantClientPassword;
 
     private BigDecimal amount;
 
@@ -68,12 +70,20 @@ public class PlatnaKartica {
         this.datumVazenja = datumVazenja;
     }
 
-    public String getMerchantUsername() {
-        return merchantUsername;
+    public String getMerchantClientId() {
+        return merchantClientId;
     }
 
-    public void setMerchantUsername(String merchantUsername) {
-        this.merchantUsername = merchantUsername;
+    public void setMerchantClientId(String merchantClientId) {
+        this.merchantClientId = merchantClientId;
+    }
+
+    public String getMerchantClientPassword() {
+        return merchantClientPassword;
+    }
+
+    public void setMerchantClientPassword(String merchantClientPassword) {
+        this.merchantClientPassword = merchantClientPassword;
     }
 
     public BigDecimal getAmount() {

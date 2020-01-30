@@ -1,5 +1,6 @@
 package com.sep.banka.service;
 
+import com.sep.banka.dto.BankaSecretDTO;
 import com.sep.banka.dto.NaucniCasopisDTO;
 import com.sep.banka.dto.PlatnaKarticaDTO;
 import com.sep.banka.model.PlatnaKartica;
@@ -11,8 +12,8 @@ public interface PlatnaKarticaService {
 
     public List<PlatnaKartica> getAllPlatneKartice();
     public PlatnaKartica save(PlatnaKartica platnaKartica);
-    public Boolean prodavacImaKarticu(String merchantUsername);
-    public Boolean prodavciImajuKarticu(Set<NaucniCasopisDTO> casopisi);
+    public Boolean prodavacImaKarticu(String clientId,String clientPass);
+    public Boolean prodavciImajuKarticu(Set<BankaSecretDTO> bankaSecretDTOS);
     public List<PlatnaKartica> getProdavacKartica(PlatnaKarticaDTO platnaKarticaDTO);
     public PlatnaKartica getKartica(PlatnaKarticaDTO platnaKarticaDTO);
     public PlatnaKartica getKupacKartica(PlatnaKarticaDTO platnaKarticaDTO);
