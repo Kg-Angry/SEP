@@ -1,11 +1,8 @@
 package com.sep.koncentratorPlacanja.controller;
 
 import com.sep.koncentratorPlacanja.dto.*;
-import com.sep.koncentratorPlacanja.model.TipPlacanja;
-import com.sep.koncentratorPlacanja.model.TipPlacanjaModel;
-import com.sep.koncentratorPlacanja.model.Transakcije;
-import com.sep.koncentratorPlacanja.service.TipPlacanjaService;
-import com.sep.koncentratorPlacanja.service.TransakcijeService;
+import com.sep.koncentratorPlacanja.model.*;
+import com.sep.koncentratorPlacanja.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @RestController
 @RequestMapping(value = "api1/kp")
@@ -33,9 +27,39 @@ public class KoncentratorPlacanjaController {
 
     @Autowired
     private TransakcijeService ts;
+    @Autowired
+    private BankaSecretService bankaSecretService;
+    @Autowired
+    private PayPalSecretService payPalSecretService;
+    @Autowired
+    private BitCoinSecretService bitCoinSecretService;
 
 
     private static final Logger logger = LoggerFactory.getLogger(KoncentratorPlacanjaController.class);
+
+//    tipPlacanja = BANKA, Paypal, Bitcoin
+    @GetMapping("/form/{tipPlacanja}")
+    public ResponseEntity<?> getFormForSecret(@PathVariable String tipPlacanja){
+
+        FormDTO formDTO = restTemplate.getForObject("https://"+tipPlacanja+"-api/api/form",FormDTO.class);
+        return ResponseEntity.ok(formDTO);
+    }
+
+    @PostMapping("/form/submit")
+    public ResponseEntity<?> submitFormSecret(@RequestBody FormSubmitDTO formSubmitDTO){
+        if(formSubmitDTO.getNaziv().equals("banka")){
+            bankaSecretService.save(formSubmitDTO);
+        }else if(formSubmitDTO.getNaziv().equals("paypal")){
+            payPalSecretService.save(formSubmitDTO);
+        }else if(formSubmitDTO.getNaziv().equals("bitcoin")){
+            System.out.println("BITCOIN");
+        }else{
+            System.out.println("Novi api");
+        }
+
+        return ResponseEntity.ok(formSubmitDTO);
+    }
+
 
     @PostMapping(value="/pretplata")
     public String pretplata(@RequestBody PlatilacDTO platilacDTO)
@@ -230,6 +254,8 @@ public class KoncentratorPlacanjaController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<PlatilacBankaDTO> entity = new HttpEntity<>(platilacBankaDTO,headers);
+        Set<BankaSecretDTO> bankaSecretDTOS = bankaSecretService.findSecret(platilacBankaDTO);
+        platilacBankaDTO.setBankaSecret(bankaSecretDTOS);
         String retval = restTemplate.postForObject("https://BANKA-API/"
                 +"startPayment",entity,String.class);
         logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");

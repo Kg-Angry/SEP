@@ -21,6 +21,8 @@ public class PlatilacBankaDTO {
 
     private Set<NaucniCasopisDTO> nazivi_casopisa;
 
+    private Set<BankaSecretDTO> bankaSecret;
+
     public PlatilacBankaDTO(String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, Set<NaucniCasopisDTO> naziv_casopisa) {
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -94,5 +96,13 @@ public class PlatilacBankaDTO {
 
     public void setNazivi_casopisa(Set<NaucniCasopisDTO> naziv_casopisa) {
         this.nazivi_casopisa = naziv_casopisa;
+    }
+
+    public Set<BankaSecretDTO> getBankaSecret() {
+        return bankaSecret;
+    }
+
+    public void setBankaSecret(Set<BankaSecretDTO> bankaSecret) {
+        this.bankaSecret = bankaSecret;
     }
 }

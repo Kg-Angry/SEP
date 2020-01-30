@@ -69,7 +69,7 @@ public class BankaController {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<TransakcijeDTO> transakcija = new HttpEntity<>(transakcijeDTO,headers);
         restTemplate.postForObject("https://koncentrator-placanja/api1/kp/kreiranaTransakcija",transakcija,String.class);
-        if(platnaKarticaService.prodavciImajuKarticu(platilacBankaDTO.getNazivi_casopisa())){
+        if(platnaKarticaService.prodavciImajuKarticu(platilacBankaDTO.getBankaSecret())){
             Payment payment = new Payment("https://localhost:4201/banka");
             payment = paymentService.save(payment);
             payment.setPaymentUrl("https://localhost:4201/banka/"+payment.getIdPayment());
@@ -101,7 +101,9 @@ public class BankaController {
         boolean flag = false;
         ResponseDTO response = new ResponseDTO();
         for(PlatnaKartica platnaKarticaCasopisa: karticeCasopisa) {
-            platnaKarticaDTO.setMerchantUsername(platnaKarticaCasopisa.getMerchantUsername());
+            platnaKarticaDTO.setMerchantClientId(platnaKarticaCasopisa.getMerchantClientId());
+            platnaKarticaDTO.setMerchantClientPassword(platnaKarticaCasopisa.getMerchantClientPassword());
+            platnaKarticaDTO.setMerchantUsername(platnaKarticaCasopisa.getCardHolderName());
             if (platnaKarticaDTO.getPan().substring(0, 5).equals(platnaKarticaCasopisa.getPan().substring(0, 5))) {
 
                 logger.info("\n\t\t Kartica platioca je u istoj banci");

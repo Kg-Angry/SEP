@@ -15,8 +15,9 @@ insert into tipovi_placanja(id,tip_placanja) values (1,"BITCOIN");
 insert into tipovi_placanja(id,tip_placanja) values (2,"PAYPAL");
 insert into tipovi_placanja(id,tip_placanja) values (2,"BANKA");
 insert into tipovi_placanja(id,tip_placanja) values (3,"BANKA");
--- Secret
-insert into secret(id,naziv_casopisa,merchant_id,merchant_pass) VALUES (1,"Casopis",21,"Sifra");
 
 -- select * from moguci_tipovi_placanja;
 
+-- banka secret
+insert into banka_secret(id,casopis_username,client_id,client_password) values (1,"Casopis","4124","pass");
+insert into banka_secret(id,casopis_username,client_id,client_password) values (2,"Svet kompjutera","1234","pass1");

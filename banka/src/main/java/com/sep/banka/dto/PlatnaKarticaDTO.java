@@ -13,6 +13,8 @@ public class PlatnaKarticaDTO {
     private String datumVazenja;
 
     private String merchantUsername;
+    private String merchantClientId;
+    private String merchantClientPassword;
 
     private Long paymentId;
 
@@ -64,12 +66,20 @@ public class PlatnaKarticaDTO {
         this.datumVazenja = datumVazenja;
     }
 
-    public String getMerchantUsername() {
-        return merchantUsername;
+    public String getMerchantClientId() {
+        return merchantClientId;
     }
 
-    public void setMerchantUsername(String merchantUsername) {
-        this.merchantUsername = merchantUsername;
+    public void setMerchantClientId(String merchantClientId) {
+        this.merchantClientId = merchantClientId;
+    }
+
+    public String getMerchantClientPassword() {
+        return merchantClientPassword;
+    }
+
+    public void setMerchantClientPassword(String merchantClientPassword) {
+        this.merchantClientPassword = merchantClientPassword;
     }
 
     public Long getPaymentId() {
@@ -118,5 +128,13 @@ public class PlatnaKarticaDTO {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public String getMerchantUsername() {
+        return merchantUsername;
+    }
+
+    public void setMerchantUsername(String merchantUsername) {
+        this.merchantUsername = merchantUsername;
     }
 }
