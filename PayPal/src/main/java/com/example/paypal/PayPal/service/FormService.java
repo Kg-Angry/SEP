@@ -19,8 +19,8 @@ public class FormService {
         formDTO.getFields().add(formFieldDTO1);
         FormFieldDTO formFieldDTO2 = new FormFieldDTO();
         formFieldDTO2.setFieldTypeName("String");
-        formFieldDTO1.setFieldLabel("ClientSecret");
-        formDTO.getFields().add(formFieldDTO1);
+        formFieldDTO2.setFieldLabel("ClientSecret");
+        formDTO.getFields().add(formFieldDTO2);
         return formDTO;
     }
 }
