@@ -100,7 +100,10 @@ public class PayPalController {
                 TransakcijeDTO trDTO = new TransakcijeDTO();
 
                 trDTO.setIdTransakcije(platilac.getId_porudzbine().toString());
-                trDTO.setNaziv(platilac.getNaziv_casopisa());
+                if(platilac.getNaziv_radova().equals(""))
+                    trDTO.setNaziv(platilac.getNaziv_casopisa());
+                else
+                    trDTO.setNaziv(platilac.getNaziv_radova());
                 trDTO.setOrderId(orderId);
                 trDTO.setStatus("kreirana");
                 trDTO.setUplatilac(platilac.getKorisnicko_ime_platioca());

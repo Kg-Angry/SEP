@@ -14,4 +14,6 @@ public interface TransakcijeRepository extends JpaRepository<Transakcije, Long> 
     Transakcije findByOrderId (String order_id);
 
     List<Transakcije> findAllByStatus (String status);
+
+    List<Transakcije> findByUplatilac (String korisnicko_ime);
 }

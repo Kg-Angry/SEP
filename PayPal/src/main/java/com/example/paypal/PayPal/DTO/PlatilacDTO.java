@@ -34,10 +34,12 @@ public class PlatilacDTO {
 
     private String rate;
 
+    private String naziv_radova;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret,String token, String period, String rate) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret,String token, String period, String rate, String nazivRadova) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -52,11 +54,12 @@ public class PlatilacDTO {
         this.token = token;
         this.period = period;
         this.rate = rate;
+        this.naziv_radova=nazivRadova;
     }
 
     public PlatilacDTO (Platilac p)
     {
-        this(p.getCena(),p.getKorisnicko_ime_platioca(),p.getLozinka_platioca(),p.getId_porudzbine(),p.getVremensko_ogranicenje(),p.getUspesnaRedirekcija(),p.getNeuspesnaRedirekcija(),p.getPogresnaRedirekcija(),p.getNaziv_casopisa(),"","",p.getToken(),p.getPeriod(),p.getRate());
+        this(p.getCena(),p.getKorisnicko_ime_platioca(),p.getLozinka_platioca(),p.getId_porudzbine(),p.getVremensko_ogranicenje(),p.getUspesnaRedirekcija(),p.getNeuspesnaRedirekcija(),p.getPogresnaRedirekcija(),p.getNaziv_casopisa(),"","",p.getToken(),p.getPeriod(),p.getRate(),p.getNaziv_radova());
     }
 
     public Double getCena() {
@@ -169,5 +172,13 @@ public class PlatilacDTO {
 
     public void setRate(String rate) {
         this.rate = rate;
+    }
+
+    public String getNaziv_radova() {
+        return naziv_radova;
+    }
+
+    public void setNaziv_radova(String naziv_radova) {
+        this.naziv_radova = naziv_radova;
     }
 }

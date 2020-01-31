@@ -32,4 +32,9 @@ public class TransakcijeService {
     {
         return tr.findAllByStatus(status);
     }
+
+    public List<Transakcije> findByUplatilac (String korisnicko_ime)
+    {
+        return tr.findByUplatilac(korisnicko_ime);
+    }
 }

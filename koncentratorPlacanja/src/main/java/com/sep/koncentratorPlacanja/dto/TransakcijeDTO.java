@@ -1,5 +1,7 @@
 package com.sep.koncentratorPlacanja.dto;
 
+import com.sep.koncentratorPlacanja.model.Transakcije;
+
 public class TransakcijeDTO {
 
     private Long id;
@@ -29,6 +31,10 @@ public class TransakcijeDTO {
         this.cena = cena;
     }
 
+    public TransakcijeDTO (Transakcije t)
+    {
+        this(t.getId(),t.getIdTransakcije(),t.getUuid(),t.getNaziv(),t.getVremeKreiranjaTransakcije(),t.getStatus(),t.getUplatilac(),t.getTipPlacanja(),t.getOrderId(),t.getCena());
+    }
     public Long getId() {
         return id;
     }

@@ -30,7 +30,11 @@ public class BitcoinController {
         mapa.put("price_amount", platilac.getCena());
         mapa.put("price_currency","USD");
         mapa.put("receive_currency","USD");
-        mapa.put("title", platilac.getNaziv_casopisa());
+        if(platilac.getNaziv_radova().equals(""))
+        {
+            mapa.put("title", platilac.getNaziv_casopisa());
+        }else
+            mapa.put("title", platilac.getNaziv_radova());
         mapa.put("description", "Placanje naucnog casopisa");
         mapa.put("callback_url", "https://api-sandbox.coingate.com/account/orders");
         mapa.put("success_url", "https://localhost:4200/uspesnoPlacanje/"+order_id);
@@ -59,7 +63,11 @@ public class BitcoinController {
         trDTO.setOrderId(order_id);
         trDTO.setCena(platilac.getCena());
         trDTO.setUuid(response.getPayment_url().split("invoice/")[1]);
-        trDTO.setNaziv(platilac.getNaziv_casopisa());
+        if(platilac.getNaziv_radova().equals(""))
+        {
+            trDTO.setNaziv(platilac.getNaziv_casopisa());
+        }else
+            trDTO.setNaziv(platilac.getNaziv_radova());
         trDTO.setVremeKreiranjaTransakcije(response.getCreated_at());
         trDTO.setStatus("kreirana");
         trDTO.setTipPlacanja("BITCOIN");

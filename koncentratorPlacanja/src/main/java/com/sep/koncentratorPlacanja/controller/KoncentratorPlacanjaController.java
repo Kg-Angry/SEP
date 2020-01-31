@@ -53,7 +53,7 @@ public class KoncentratorPlacanjaController {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<FormSubmitDTO> entity = new HttpEntity<>(formSubmitDTO,headers);
-            restTemplate.postForEntity("https://paypal-api/api/form",entity,ResponseEntity.class);
+            restTemplate.postForObject("https://paypal-api/api/form",entity,String.class);
 //            payPalSecretService.save(formSubmitDTO);
         }else if(formSubmitDTO.getNaziv().equals("BitcoinSecret")){
             System.out.println("BITCOIN");
@@ -265,5 +265,18 @@ public class KoncentratorPlacanjaController {
                 +"startPayment",entity,String.class);
         logger.info("\n\t\tRedirekcija na adresu: " + retval + " , za podatke o placanju\n");
         return retval;
+    }
+
+    @GetMapping(value="/sveTransakcije/{korisnicko_ime}")
+    public ResponseEntity<List<TransakcijeDTO>> sveKorisnickeTransakcije(@PathVariable String korisnicko_ime)
+    {
+        List<Transakcije> list_transakcije = ts.findByUplatilac(korisnicko_ime);
+        List<TransakcijeDTO> list_transakcijaDTO = new ArrayList<>();
+        for(Transakcije t : list_transakcije)
+        {
+            list_transakcijaDTO.add(new TransakcijeDTO(t));
+        }
+
+        return new ResponseEntity<>(list_transakcijaDTO,HttpStatus.OK);
     }
 }

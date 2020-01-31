@@ -32,10 +32,12 @@ public class Platilac {
 
     private String rate; //na koliki period? npr: period je mesec a rate je 12 pa znaci na celu godinu se razvlaci
 
+    private String naziv_radova;
+
     public Platilac() {
     }
 
-    public Platilac(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret, String token, String period, String rate) {
+    public Platilac(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String client_id, String client_secret, String token, String period, String rate, String nazivRadova) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -50,6 +52,7 @@ public class Platilac {
         this.token = token;
         this.period = period;
         this.rate = rate;
+        this.naziv_radova=nazivRadova;
     }
 
     public Double getCena() {
@@ -162,5 +165,13 @@ public class Platilac {
 
     public void setRate(String rate) {
         this.rate = rate;
+    }
+
+    public String getNaziv_radova() {
+        return naziv_radova;
+    }
+
+    public void setNaziv_radova(String naziv_radova) {
+        this.naziv_radova = naziv_radova;
     }
 }

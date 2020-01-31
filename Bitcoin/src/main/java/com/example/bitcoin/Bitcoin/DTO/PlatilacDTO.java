@@ -21,10 +21,12 @@ public class PlatilacDTO {
 
     private String naziv_casopisa;
 
+    private String naziv_radova;
+
     public PlatilacDTO() {
     }
 
-    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa) {
+    public PlatilacDTO(Double cena, String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, String naziv_casopisa, String naziv_radova) {
         this.cena = cena;
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -34,6 +36,7 @@ public class PlatilacDTO {
         this.neuspesnaRedirekcija = neuspesnaRedirekcija;
         this.pogresnaRedirekcija = pogresnaRedirekcija;
         this.naziv_casopisa = naziv_casopisa;
+        this.naziv_radova=naziv_radova;
     }
 
     public Double getCena() {
@@ -106,5 +109,13 @@ public class PlatilacDTO {
 
     public void setNaziv_casopisa(String naziv_casopisa) {
         this.naziv_casopisa = naziv_casopisa;
+    }
+
+    public String getNaziv_radova() {
+        return naziv_radova;
+    }
+
+    public void setNaziv_radova(String naziv_radova) {
+        this.naziv_radova = naziv_radova;
     }
 }
