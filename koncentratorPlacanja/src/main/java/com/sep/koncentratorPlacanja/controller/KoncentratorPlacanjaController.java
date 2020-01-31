@@ -50,7 +50,11 @@ public class KoncentratorPlacanjaController {
         if(formSubmitDTO.getNaziv().equals("BankaSecret")){
             bankaSecretService.save(formSubmitDTO);
         }else if(formSubmitDTO.getNaziv().equals("PayPalSecret")){
-            payPalSecretService.save(formSubmitDTO);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<FormSubmitDTO> entity = new HttpEntity<>(formSubmitDTO,headers);
+            restTemplate.postForEntity("https://paypal-api/api/form",entity,ResponseEntity.class);
+//            payPalSecretService.save(formSubmitDTO);
         }else if(formSubmitDTO.getNaziv().equals("BitcoinSecret")){
             System.out.println("BITCOIN");
         }else{

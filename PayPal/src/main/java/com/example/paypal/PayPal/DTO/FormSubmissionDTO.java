@@ -2,7 +2,7 @@ package com.example.paypal.PayPal.DTO;
 
 public class FormSubmissionDTO {
     private String fieldId;
-    private String fieldValues;
+    private String fieldValue;
 
     public FormSubmissionDTO() {
     }
@@ -15,11 +15,11 @@ public class FormSubmissionDTO {
         this.fieldId = fieldId;
     }
 
-    public String getFieldValues() {
-        return fieldValues;
+    public String getFieldValue() {
+        return fieldValue;
     }
 
-    public void setFieldValues(String fieldValues) {
-        this.fieldValues = fieldValues;
+    public void setFieldValue(String fieldValue) {
+        this.fieldValue = fieldValue;
     }
 }
