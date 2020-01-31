@@ -11,10 +11,6 @@ public class FormServiceImpl implements FormService {
     public FormDTO getFormForSecret() {
         FormDTO formDTO = new FormDTO();
         formDTO.setNaziv("BankaSecret");
-        FormFieldDTO formFieldDTO = new FormFieldDTO();
-        formFieldDTO.setFieldLabel("CasopisUsername");
-        formFieldDTO.setFieldTypeName("String");
-        formDTO.getFields().add(formFieldDTO);
         FormFieldDTO formFieldDTO1 = new FormFieldDTO();
         formFieldDTO1.setFieldTypeName("String");
         formFieldDTO1.setFieldLabel("ClientId");
