@@ -47,11 +47,11 @@ public class KoncentratorPlacanjaController {
 
     @PostMapping("/form/submit")
     public ResponseEntity<?> submitFormSecret(@RequestBody FormSubmitDTO formSubmitDTO){
-        if(formSubmitDTO.getNaziv().equals("banka")){
+        if(formSubmitDTO.getNaziv().equals("BankaSecret")){
             bankaSecretService.save(formSubmitDTO);
-        }else if(formSubmitDTO.getNaziv().equals("paypal")){
+        }else if(formSubmitDTO.getNaziv().equals("PayPalSecret")){
             payPalSecretService.save(formSubmitDTO);
-        }else if(formSubmitDTO.getNaziv().equals("bitcoin")){
+        }else if(formSubmitDTO.getNaziv().equals("BitcoinSecret")){
             System.out.println("BITCOIN");
         }else{
             System.out.println("Novi api");
