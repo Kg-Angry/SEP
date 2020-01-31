@@ -23,6 +23,8 @@ public class PlatilacBankaDTO {
 
     private Set<BankaSecretDTO> bankaSecret;
 
+    private String naziv_radova;
+
     public PlatilacBankaDTO(String korisnicko_ime_platioca, String lozinka_platioca, Integer id_porudzbine, Timestamp vremensko_ogranicenje, String uspesnaRedirekcija, String neuspesnaRedirekcija, String pogresnaRedirekcija, Set<NaucniCasopisDTO> naziv_casopisa) {
         this.korisnicko_ime_platioca = korisnicko_ime_platioca;
         this.lozinka_platioca = lozinka_platioca;
@@ -104,5 +106,13 @@ public class PlatilacBankaDTO {
 
     public void setBankaSecret(Set<BankaSecretDTO> bankaSecret) {
         this.bankaSecret = bankaSecret;
+    }
+
+    public String getNaziv_radova() {
+        return naziv_radova;
+    }
+
+    public void setNaziv_radova(String naziv_radova) {
+        this.naziv_radova = naziv_radova;
     }
 }

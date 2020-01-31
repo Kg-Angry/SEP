@@ -13,6 +13,8 @@ public class PlatnaKarticaDTO {
     private String datumVazenja;
 
     private String merchantUsername;
+    private String merchantClientId;
+    private String merchantClientPassword;
 
     private Long paymentId;
 
@@ -20,14 +22,17 @@ public class PlatnaKarticaDTO {
 
     private Timestamp acquirerTimestamp;
 
-    private Long issuerId;
+    private int issuerId;
 
     private Timestamp issuerTimestamp;
 
     private String orderId;
 
+
+
     public PlatnaKarticaDTO() {
     }
+
 
     public String getPan() {
         return pan;
@@ -61,12 +66,20 @@ public class PlatnaKarticaDTO {
         this.datumVazenja = datumVazenja;
     }
 
-    public String getMerchantUsername() {
-        return merchantUsername;
+    public String getMerchantClientId() {
+        return merchantClientId;
     }
 
-    public void setMerchantUsername(String merchantUsername) {
-        this.merchantUsername = merchantUsername;
+    public void setMerchantClientId(String merchantClientId) {
+        this.merchantClientId = merchantClientId;
+    }
+
+    public String getMerchantClientPassword() {
+        return merchantClientPassword;
+    }
+
+    public void setMerchantClientPassword(String merchantClientPassword) {
+        this.merchantClientPassword = merchantClientPassword;
     }
 
     public Long getPaymentId() {
@@ -93,11 +106,11 @@ public class PlatnaKarticaDTO {
         this.acquirerTimestamp = acquirerTimestamp;
     }
 
-    public Long getIssuerId() {
+    public int getIssuerId() {
         return issuerId;
     }
 
-    public void setIssuerId(Long issuerId) {
+    public void setIssuerId(int issuerId) {
         this.issuerId = issuerId;
     }
 
@@ -112,7 +125,16 @@ public class PlatnaKarticaDTO {
     public String getOrderId() {
         return orderId;
     }
+
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public String getMerchantUsername() {
+        return merchantUsername;
+    }
+
+    public void setMerchantUsername(String merchantUsername) {
+        this.merchantUsername = merchantUsername;
     }
 }

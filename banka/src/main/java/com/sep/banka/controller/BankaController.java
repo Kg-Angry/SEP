@@ -58,7 +58,11 @@ public class BankaController {
             cena+=nc.getCena().doubleValue();
         }
 
+        if(!platilacBankaDTO.getNaziv_radova().equals(""))
+        transakcijeDTO.setNaziv(platilacBankaDTO.getNaziv_radova());
+        else
         transakcijeDTO.setNaziv(nazivi.substring(0,nazivi.length()-1));
+
         transakcijeDTO.setOrderId(UUID.randomUUID().toString());
         transakcijeDTO.setStatus("kreirana");
         transakcijeDTO.setUplatilac(platilacBankaDTO.getKorisnicko_ime_platioca());
