@@ -64,6 +64,12 @@ public class KoncentratorPlacanjaController {
         return ResponseEntity.ok(formSubmitDTO);
     }
 
+    @GetMapping("/preiodPretplate")
+    public ResponseEntity<?> getPreiodPretplate(){
+
+        ListPeriodPretplateDTO listPeriodPretplateDTO = restTemplate.getForObject("https://paypal-api/api3/paypal/periodPretplate",ListPeriodPretplateDTO.class);
+        return ResponseEntity.ok(listPeriodPretplateDTO);
+    }
 
     @PostMapping(value="/pretplata")
     public String pretplata(@RequestBody PlatilacDTO platilacDTO)

@@ -1,9 +1,6 @@
 package com.example.paypal.PayPal.Controller;
 
-import com.example.paypal.PayPal.DTO.PayPalProfileDTO;
-import com.example.paypal.PayPal.DTO.PlatilacDTO;
-import com.example.paypal.PayPal.DTO.TopSecretDataDTO;
-import com.example.paypal.PayPal.DTO.TransakcijeDTO;
+import com.example.paypal.PayPal.DTO.*;
 import com.example.paypal.PayPal.Model.TopSecretData;
 import com.example.paypal.PayPal.Service.TopSecretDataService;
 import com.paypal.api.payments.*;
@@ -340,5 +337,32 @@ public class PayPalController {
         {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
+    }
+
+    @GetMapping(value="/periodPretplate")
+    public ResponseEntity<?> periodPretplate()
+    {
+        ListPeriodPretplateDTO lista = new ListPeriodPretplateDTO();
+        Set<Integer> ciklusiWeek = new HashSet<>(); //48
+        Set<Integer> ciklusiMonth = new HashSet<>(); //12
+        Set<Integer> ciklusiYear = new HashSet<>(); //1
+        for(int i=1;i<=48;i++)
+        {
+            ciklusiWeek.add(i);
+        }
+        for(int i=1;i<=12;i++)
+        {
+            ciklusiMonth.add(i);
+        }
+        ciklusiYear.add(1);
+        PeriodPretplateDTO week = new PeriodPretplateDTO("WEEK",ciklusiWeek);
+        PeriodPretplateDTO month = new PeriodPretplateDTO("MONTH",ciklusiMonth);
+        PeriodPretplateDTO year = new PeriodPretplateDTO("YEAR",ciklusiYear);
+
+        lista.getList_period().add(week);
+        lista.getList_period().add(month);
+        lista.getList_period().add(year);
+        
+        return new ResponseEntity<>(lista,HttpStatus.OK);
     }
 }
