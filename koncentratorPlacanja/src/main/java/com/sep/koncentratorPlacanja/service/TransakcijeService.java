@@ -37,4 +37,9 @@ public class TransakcijeService {
     {
         return tr.findByUplatilac(korisnicko_ime);
     }
+
+    public List<Transakcije> findAll()
+    {
+        return tr.findAll();
+    }
 }

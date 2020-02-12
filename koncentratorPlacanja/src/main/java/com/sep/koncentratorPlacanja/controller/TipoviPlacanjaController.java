@@ -73,4 +73,19 @@ public class TipoviPlacanjaController {
 
     }
 
+    @PostMapping(value="/noviServis")
+    public ResponseEntity<?> noviServis(@RequestBody MoguciTipoviPlacanjaDTO noviTipDTO)
+    {
+        MoguciTipoviPlacanja mtp = mtps.findByNaziv(noviTipDTO.getNaziv());
+
+        if(mtp==null)
+        {
+            MoguciTipoviPlacanja noviTip = new MoguciTipoviPlacanja(noviTipDTO.getNaziv());
+            mtps.save(noviTip);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else
+            return new ResponseEntity<>(HttpStatus.FOUND);
+
+    }
+
 }

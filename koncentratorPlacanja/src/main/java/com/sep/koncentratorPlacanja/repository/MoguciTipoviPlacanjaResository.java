@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MoguciTipoviPlacanjaResository extends JpaRepository<MoguciTipoviPlacanja, Long> {
+
+    MoguciTipoviPlacanja findByNaziv(String naziv);
 }

@@ -273,16 +273,18 @@ public class KoncentratorPlacanjaController {
         return retval;
     }
 
-    @GetMapping(value="/sveTransakcije/{korisnicko_ime}")
-    public ResponseEntity<List<TransakcijeDTO>> sveKorisnickeTransakcije(@PathVariable String korisnicko_ime)
+    @GetMapping(value="/sveTransakcije")
+    public TransakcijeListDTO sveKorisnickeTransakcije()
     {
-        List<Transakcije> list_transakcije = ts.findByUplatilac(korisnicko_ime);
+        TransakcijeListDTO transakcijeListDTO = new TransakcijeListDTO();
+        List<Transakcije> list_transakcije = ts.findAll();
         List<TransakcijeDTO> list_transakcijaDTO = new ArrayList<>();
         for(Transakcije t : list_transakcije)
         {
             list_transakcijaDTO.add(new TransakcijeDTO(t));
         }
 
-        return new ResponseEntity<>(list_transakcijaDTO,HttpStatus.OK);
+        transakcijeListDTO.setList_transakcije(list_transakcijaDTO);
+        return transakcijeListDTO;
     }
 }

@@ -22,4 +22,9 @@ public class MoguciTipoviPlacanjaService {
     {
         mtpr.save(m);
     }
+
+    public MoguciTipoviPlacanja findByNaziv(String naziv)
+    {
+        return mtpr.findByNaziv(naziv);
+    }
 }
