@@ -49,16 +49,20 @@ public class KoncentratorPlacanjaController {
     public ResponseEntity<?> submitFormSecret(@RequestBody FormSubmitDTO formSubmitDTO){
         if(formSubmitDTO.getNaziv().equals("BankaSecret")){
             bankaSecretService.save(formSubmitDTO);
+            logger.info("\n\t\t Submit forme banke i cuvanje secret i pass.\n");
         }else if(formSubmitDTO.getNaziv().equals("PayPalSecret")){
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<FormSubmitDTO> entity = new HttpEntity<>(formSubmitDTO,headers);
             restTemplate.postForObject("https://paypal-api/api/form",entity,String.class);
+            logger.info("\n\t\t Submit forme paypal-a i cuvanje secret i id.\n");
 //            payPalSecretService.save(formSubmitDTO);
         }else if(formSubmitDTO.getNaziv().equals("BitcoinSecret")){
             System.out.println("BITCOIN");
+            logger.info("\n\t\t Submit forme bitcoin.\n");
         }else{
-            System.out.println("Novi api");
+            System.out.println("Novi Servis");
+            logger.info("\n\t\t Submit forme novog servisa.\n");
         }
 
         return ResponseEntity.ok(formSubmitDTO);

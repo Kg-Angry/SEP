@@ -1,4 +1,4 @@
-package com.sep.NoviServis.Controller;
+package com.sep.NoviServis.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
