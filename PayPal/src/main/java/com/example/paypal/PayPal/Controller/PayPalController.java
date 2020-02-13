@@ -16,6 +16,8 @@ import org.springframework.web.client.RestTemplate;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
@@ -29,12 +31,10 @@ public class PayPalController {
     @Autowired
     private TopSecretDataService tsds;
 
-//    private static String clientId = "Ae_29b_0t76NauXNqN2GpLBl7CAR82-AoEOGpn4OpY29CBNLDVdD4QwKdheDsBHafoQvs_HLnCRGYSbm";
-//    private static String clientSecret = "EBtg38K9znkZNdNgrib5mZDdifDYzMqVYHLybGuaftjFd8Q76ag5tjZuxytET2DczXDXxWBP-vp2c97K";
-
     private static String clientId="";
     private static String clientSecret="";
     private static String planID="";
+    private Plan instance = null;
 
     @RequestMapping(method = RequestMethod.POST, value="/startPayment")
     public String paypal(@RequestBody PlatilacDTO platilac)
@@ -199,6 +199,7 @@ public class PayPalController {
             APIContext apiContext = new APIContext(clientId,clientSecret, "sandbox");
             // Create payment
             Plan createdPlan = p.create(apiContext);
+            this.instance = createdPlan;
 
             System.out.println("ID plana za verifikaciju " + createdPlan.getId());
             System.out.println("Stanje plana" + createdPlan.getState());
@@ -364,5 +365,52 @@ public class PayPalController {
         lista.getList_period().add(year);
         
         return new ResponseEntity<>(lista,HttpStatus.OK);
+    }
+
+
+    @PostMapping(value="/proveraPretplate")
+    public PromenaStanjaDTO proveraPretplate(@RequestBody TransakcijeListDTO transakcijeListDTO) throws PayPalRESTException, ParseException {
+        PromenaStanjaDTO promenaStanjaDTO = new PromenaStanjaDTO();
+        for(TransakcijeDTO t : transakcijeListDTO.getList_transakcije())
+        {
+            APIContext apiContext = new APIContext(clientId, clientSecret, "sandbox");
+            Plan p = Plan.get(apiContext,t.getOrderId());
+            if(p.getState().equals("INACTIVE"))
+            {
+                promenaStanjaDTO.getIdTransakcija().add(t.getOrderId());
+            }else
+            {
+                Date today = Calendar.getInstance().getTime();
+                long date = 0;
+                SimpleDateFormat s = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date d = s.parse(p.getUpdateTime());
+                List<PaymentDefinition> pd = p.getPaymentDefinitions();
+                String frekvencija = pd.get(0).getFrequency();
+                String ciklus = pd.get(0).getCycles();
+                if(frekvencija.equals("WEEK"))
+                {
+                    date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
+                    if(date == 7)
+                    {
+                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                    }
+                }else if(frekvencija.equals("MONTH"))
+                {
+                    date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
+                    if(date == 30)
+                    {
+                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                    }
+                }else if(frekvencija.equals("YEAR"))
+                {
+                    date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
+                    if(date == 365)
+                    {
+                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                    }
+                }
+            }
+        }
+        return promenaStanjaDTO;
     }
 }

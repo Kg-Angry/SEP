@@ -3,6 +3,7 @@ package com.sep.koncentratorPlacanja.controller;
 import com.sep.koncentratorPlacanja.dto.*;
 import com.sep.koncentratorPlacanja.model.*;
 import com.sep.koncentratorPlacanja.service.*;
+import org.apache.commons.lang.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -290,5 +291,50 @@ public class KoncentratorPlacanjaController {
 
         transakcijeListDTO.setList_transakcije(list_transakcijaDTO);
         return transakcijeListDTO;
+    }
+
+
+    @PostMapping(value="/pretplataTransakcija/{korisnickoIme}")
+    public void pretplataTransakcija(@PathVariable String korisnickoIme)
+    {
+        List<TransakcijeDTO> saPretplatom = new ArrayList<>();
+        List<Transakcije> t = ts.findByUplatilac(korisnickoIme);
+        for(Transakcije transakcije : t)
+        {
+            if(transakcije.getOrderId().substring(0,2).equals("P-"))
+            {
+                saPretplatom.add(new TransakcijeDTO(transakcije));
+            }
+        }
+        TransakcijeListDTO transakcijeListDTO = new TransakcijeListDTO();
+        transakcijeListDTO.setList_transakcije(saPretplatom);
+        Boolean retVal=null;
+        retVal=restTemplate.postForObject("https://paypal-api/api3/paypal/proveraPretplate",transakcijeListDTO,Boolean.class);
+
+    }
+
+    @Scheduled(fixedRate= DateUtils.MILLIS_PER_DAY)
+    public void pretplataTransakcija() {
+        List<TransakcijeDTO> saPretplatom = new ArrayList<>();
+        List<Transakcije> t = ts.findAll();
+        for(Transakcije transakcije : t)
+        {
+            if(transakcije.getOrderId().substring(0,2).equals("P-"))
+            {
+                saPretplatom.add(new TransakcijeDTO(transakcije));
+            }
+        }
+        TransakcijeListDTO transakcijeListDTO = new TransakcijeListDTO();
+        transakcijeListDTO.setList_transakcije(saPretplatom);
+        PromenaStanjaDTO retVal;
+        retVal=restTemplate.postForObject("https://paypal-api/api3/paypal/proveraPretplate",transakcijeListDTO,PromenaStanjaDTO.class);
+
+        for(String s : retVal.getIdTransakcija())
+        {
+            Transakcije transakcije = ts.findByOrderId(s);
+            transakcije.setStatus("INACTIVE");
+            ts.save(transakcije);
+        }
+
     }
 }
