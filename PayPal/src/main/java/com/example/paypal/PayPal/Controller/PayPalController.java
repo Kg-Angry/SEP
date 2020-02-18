@@ -373,13 +373,8 @@ public class PayPalController {
         PromenaStanjaDTO promenaStanjaDTO = new PromenaStanjaDTO();
         for(TransakcijeDTO t : transakcijeListDTO.getList_transakcije())
         {
-            APIContext apiContext = new APIContext(clientId, clientSecret, "sandbox");
-            Plan p = Plan.get(apiContext,t.getOrderId());
-            if(p.getState().equals("INACTIVE"))
-            {
-                promenaStanjaDTO.getIdTransakcija().add(t.getOrderId());
-            }else
-            {
+                APIContext apiContext = new APIContext(clientId, clientSecret, "sandbox");
+                Plan p = Plan.get(apiContext,t.getOrderId());
                 Date today = Calendar.getInstance().getTime();
                 long date = 0;
                 SimpleDateFormat s = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
@@ -392,24 +387,36 @@ public class PayPalController {
                     date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
                     if(date == 7)
                     {
-                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                        if(p.getState().equals("INACTIVE"))
+                        {
+                            promenaStanjaDTO.getIdTransakcija().add(t.getOrderId());
+                        }else {
+                            promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                        }
                     }
                 }else if(frekvencija.equals("MONTH"))
                 {
                     date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
                     if(date == 30)
                     {
-                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                        if(p.getState().equals("INACTIVE"))
+                        {
+                            promenaStanjaDTO.getIdTransakcija().add(t.getOrderId());
+                        }else {
+                            promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                        }
                     }
-                }else if(frekvencija.equals("YEAR"))
-                {
-                    date = ((today.getTime() - d.getTime()) / (1000*60*60*24));
-                    if(date == 365)
-                    {
-                        promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                }else if(frekvencija.equals("YEAR")) {
+                    date = ((today.getTime() - d.getTime()) / (1000 * 60 * 60 * 24));
+                    if (date == 365) {
+                        if(p.getState().equals("INACTIVE"))
+                        {
+                            promenaStanjaDTO.getIdTransakcija().add(t.getOrderId());
+                        }else {
+                            promenaStanjaDTO.getIdPlaceno().add(t.getId());
+                        }
                     }
                 }
-            }
         }
         return promenaStanjaDTO;
     }
